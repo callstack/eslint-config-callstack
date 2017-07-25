@@ -10,25 +10,11 @@ Plugins and configs used:
 
 ## Installation
 
-You'll need to install correct version of each package.
+```
+yarn add --dev eslint eslint-config-callstack-io
+```
 
 *Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` and `npx` if you like*
-
-For convenience Linux/OSX users can run:
-
-```shell
-(
-  export PKG=eslint-config-callstack-io;
-  yarn info "$PKG" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG"
-)
-```
-
-Windows users can either install all the peer dependencies manually, or use the `install-peerdeps` cli tool.
-
-```shell
-yarn global add install-peerdeps
-install-peerdeps --dev eslint-config-airbnb
-```
 
 ## Usage
 
