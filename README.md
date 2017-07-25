@@ -11,7 +11,7 @@ Plugins and configs used:
 ## Installation
 
 ```
-$ yarn add eslint eslint-config-callstack-io
+yarn add --dev eslint eslint-config-callstack-io
 ```
 
 *Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` and `npx` if you like*
