@@ -1,6 +1,6 @@
 # eslint-config-callstack-io
 
-Eslint config for Callstack.io utilizing Airbnb config, Flow, Prettier and Jest support.
+Callstack.io eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
 
 Plugins and configs used:
 * [eslint-config-airbnb](https://yarnpkg.com/en/package/eslint-config-airbnb)
@@ -10,23 +10,30 @@ Plugins and configs used:
 
 ## Installation
 
-1. Install correct version of each package:
-* Linux/OSX users can run
-  ```shell
-  (
-    export PKG=eslint-config-callstack-io;
-    npm info "$PKG" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG"
-  )
-  ```
+You'll need to install correct version of each package.
 
-* Windows users can either install all the peer dependencies manually, or use the `install-peerdeps` cli tool.
+*Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` and `npx` if you like*
 
-  ```shell
-  npm install -g install-peerdeps
-  install-peerdeps --dev eslint-config-airbnb
-  ```
+For convenience Linux/OSX users can run:
 
-1. Add to your eslint config:
+```shell
+(
+  export PKG=eslint-config-callstack-io;
+  yarn info "$PKG" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs yarn add --dev "$PKG"
+)
+```
+
+Windows users can either install all the peer dependencies manually, or use the `install-peerdeps` cli tool.
+
+```shell
+yarn global add install-peerdeps
+install-peerdeps --dev eslint-config-airbnb
+```
+
+## Usage
+
+Add to your eslint config:
+
 ```json
 {
   "eslint": {

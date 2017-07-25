@@ -1,15 +1,19 @@
 {
   "name": "eslint-config-callstack-io",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint preset extending Airbnb, Flow, Prettier and Jest",
   "main": "index.js",
   "repository": "git@github.com:callstack-io/eslint-config-callstack-io.git",
   "author": "Michał Pierzchała <thymikee@gmail.com>",
   "license": "MIT",
-  "keywords": ["eslint", "eslintconfig", "callstack-io"],
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "callstack-io"
+  ],
   "peerDependencies": {
-    "eslint": ">=4",
     "babel-eslint": "^7.2.3",
+    "eslint": ">=4",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-flowtype": "^2.35.0",
