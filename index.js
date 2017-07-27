@@ -29,7 +29,13 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-unused-expressions': 0,
     'no-use-before-define': 0,
-    'prettier/prettier': ['error', 'fb'],
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'all'
+      }
+    ],
     'react/forbid-prop-types': 1,
     'react/jsx-filename-extension': [0, {extensions: ['.js', '.jsx']}],
     'import/no-extraneous-dependencies': [
