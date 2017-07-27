@@ -8,6 +8,26 @@ Plugins and configs used:
 * [eslint-plugin-flowtype](https://yarnpkg.com/en/package/eslint-plugin-flowtype)
 * [eslint-plugin-jest](https://yarnpkg.com/en/package/eslint-plugin-jest)
 
+Additionally, it sets these environments:
+```json
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  }
+}
+```
+
+And for test files matching default Jest `testMatch`:
+```json
+{
+  "env": {
+    "jest/globals": true
+  }
+}
+```
+
 ## Installation
 
 ```
