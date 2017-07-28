@@ -33,7 +33,7 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        trailingComma: 'all'
+        trailingComma: 'es5'
       }
     ],
     'react/forbid-prop-types': 1,
