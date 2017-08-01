@@ -26,6 +26,7 @@ module.exports = {
     'no-class-assign': 0,
     'no-duplicate-imports': 0,
     'no-plusplus': 0,
+    'no-restricted-syntax': ['error', 'WithStatement'],
     'no-underscore-dangle': 0,
     'no-unused-expressions': 0,
     'no-use-before-define': 0,
