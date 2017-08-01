@@ -15,13 +15,13 @@ module.exports = {
   plugins: ['flowtype', 'jest', 'prettier'],
   rules: {
     'flowtype/no-weak-types': 1,
-    'flowtype/require-parameter-type': 2,
+    'flowtype/require-parameter-type': 0,
     'flowtype/require-return-type': [0, 'always', {annotateUndefined: 'never'}],
     'flowtype/require-valid-file-annotation': 2,
     'import/extensions': 0,
-    'import/no-duplicates': 0,
+    'import/no-duplicates': 2,
     'import/no-dynamic-require': 0,
-    'import/no-unresolved': 0,
+    'import/no-unresolved': 2,
     'new-cap': 0,
     'no-class-assign': 0,
     'no-duplicate-imports': 0,
@@ -37,7 +37,7 @@ module.exports = {
       }
     ],
     'react/forbid-prop-types': 1,
-    'react/jsx-filename-extension': [0, {extensions: ['.js', '.jsx']}],
+    'react/jsx-filename-extension': [0, {extensions: ['.js']}],
     'import/no-extraneous-dependencies': [
       'error',
       {devDependencies: ['**/*.test.js', '**/__tests__/**']}
