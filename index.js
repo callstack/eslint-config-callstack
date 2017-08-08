@@ -19,7 +19,6 @@ module.exports = {
     'flowtype/require-return-type': [0, 'always', {annotateUndefined: 'never'}],
     'flowtype/require-valid-file-annotation': 2,
     'import/extensions': 0,
-    'import/no-duplicates': 2,
     'import/no-dynamic-require': 0,
     'import/no-unresolved': 2,
     'new-cap': 0,
