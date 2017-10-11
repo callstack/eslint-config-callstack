@@ -26,6 +26,7 @@
   "peerDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": ">=4",
+    "eslint-restricted-globals": "^0.1.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-flowtype": "^2.35.0",
@@ -40,7 +41,6 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
-    "eslint-restricted-globals": "^0.1.1",
     "semantic-release": "^6.3.6"
   }
 }
