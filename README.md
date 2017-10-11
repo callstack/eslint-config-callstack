@@ -38,12 +38,10 @@ yarn add --dev eslint eslint-config-callstack-io
 
 ## Usage
 
-Add to your eslint config:
+Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json`):
 
 ```json
 {
-  "eslint": {
     "extends": "callstack-io"
-  }
 }
 ```

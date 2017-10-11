@@ -1,3 +1,5 @@
+const restrictedGlobals = require('eslint-restricted-globals')
+
 module.exports = {
   extends: [
     'airbnb',
@@ -25,6 +27,7 @@ module.exports = {
     'no-class-assign': 0,
     'no-duplicate-imports': 0,
     'no-plusplus': 0,
+    'no-restricted-globals': ['error'].concat(restrictedGlobals),
     'no-restricted-syntax': ['error', 'WithStatement'],
     'no-underscore-dangle': 0,
     'no-unused-expressions': 0,
