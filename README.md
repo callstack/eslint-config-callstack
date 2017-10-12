@@ -1,6 +1,6 @@
 # eslint-config-callstack-io
 
-Callstack.io eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
+Callstack eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
 
 Plugins and configs used:
 * [eslint-config-airbnb](https://yarnpkg.com/en/package/eslint-config-airbnb)
@@ -34,7 +34,7 @@ And for test files matching default Jest `testMatch`:
 yarn add --dev eslint eslint-config-callstack-io
 ```
 
-*Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` and `npx` if you like*
+*Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like*
 
 ## Usage
 
