@@ -16,6 +16,7 @@ module.exports = {
   parser: 'babel-eslint',
   plugins: ['flowtype', 'jest', 'prettier'],
   rules: {
+    'class-methods-use-this': 0,
     'flowtype/no-weak-types': 1,
     'flowtype/require-parameter-type': 0,
     'flowtype/require-return-type': [0, 'always', {annotateUndefined: 'never'}],
