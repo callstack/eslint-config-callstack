@@ -1,4 +1,4 @@
-const restrictedGlobals = require('eslint-restricted-globals')
+const restrictedGlobals = require('eslint-restricted-globals');
 
 module.exports = {
   extends: [
@@ -19,7 +19,11 @@ module.exports = {
     'class-methods-use-this': 0,
     'flowtype/no-weak-types': 1,
     'flowtype/require-parameter-type': 0,
-    'flowtype/require-return-type': [0, 'always', {annotateUndefined: 'never'}],
+    'flowtype/require-return-type': [
+      0,
+      'always',
+      { annotateUndefined: 'never' }
+    ],
     'flowtype/require-valid-file-annotation': 2,
     'import/extensions': 0,
     'import/no-dynamic-require': 0,
@@ -41,10 +45,10 @@ module.exports = {
       }
     ],
     'react/forbid-prop-types': 1,
-    'react/jsx-filename-extension': [0, {extensions: ['.js']}],
+    'react/jsx-filename-extension': [0, { extensions: ['.js'] }],
     'import/no-extraneous-dependencies': [
       'error',
-      {devDependencies: ['**/*.test.js', '**/__tests__/**']}
+      { devDependencies: ['**/*.test.js', '**/__tests__/**'] }
     ],
     'react/prefer-stateless-function': 0,
     'react/prop-types': 0,
@@ -55,6 +59,13 @@ module.exports = {
     files: ['**/__tests__/**/*.js?(x)', '**/?(*.)(spec|test).js?(x)'],
     env: {
       'jest/globals': true
+    }
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.android.js', '.ios.js']
+      }
     }
   }
 };
