@@ -28,6 +28,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-dynamic-require': 0,
     'import/no-unresolved': 2,
+    'import/prefer-default-export': 0,
     'new-cap': 0,
     'no-class-assign': 0,
     'no-duplicate-imports': 0,
