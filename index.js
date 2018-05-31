@@ -57,7 +57,11 @@ module.exports = {
     'react/sort-comp': 0
   },
   overrides: {
-    files: ['**/__tests__/**/*.js?(x)', '**/?(*.)(spec|test).js?(x)'],
+    files: [
+      '**/__tests__/**/*.js?(x)',
+      '**/__mocks__/**/*.js?(x)', 
+      '**/?(*.)(spec|test).js?(x)'
+    ],
     env: {
       'jest/globals': true
     }
