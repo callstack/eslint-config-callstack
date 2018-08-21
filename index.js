@@ -4,6 +4,7 @@ module.exports = {
   extends: [
     'airbnb',
     'plugin:flowtype/recommended',
+    'plugin:jest/recommended',
     'prettier',
     'prettier/flowtype',
     'prettier/react'
@@ -55,16 +56,6 @@ module.exports = {
     'react/prop-types': 0,
     'react/require-default-props': 0,
     'react/sort-comp': 0
-  },
-  overrides: {
-    files: [
-      '**/__tests__/**/*.js?(x)',
-      '**/__mocks__/**/*.js?(x)', 
-      '**/?(*.)(spec|test).js?(x)'
-    ],
-    env: {
-      'jest/globals': true
-    }
   },
   settings: {
     'import/resolver': {
