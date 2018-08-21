@@ -45,3 +45,16 @@ Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json
     "extends": "callstack-io"
 }
 ```
+
+### Example of extending the configuration
+
+```json
+{
+  "extends": "callstack-io",
+    "rules": {
+      "global-require": 0,
+      "react/destructuring-assignment": 0,
+      "prefer-destructuring": 0
+    }
+}
+```
