@@ -7,12 +7,12 @@ module.exports = {
     'plugin:jest/recommended',
     'prettier',
     'prettier/flowtype',
-    'prettier/react'
+    'prettier/react',
   ],
   env: {
     browser: true,
     es6: true,
-    node: true
+    node: true,
   },
   parser: 'babel-eslint',
   plugins: ['flowtype', 'jest', 'prettier'],
@@ -23,7 +23,7 @@ module.exports = {
     'flowtype/require-return-type': [
       0,
       'always',
-      { annotateUndefined: 'never' }
+      { annotateUndefined: 'never' },
     ],
     'flowtype/require-valid-file-annotation': 2,
     'import/extensions': 0,
@@ -43,25 +43,26 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        trailingComma: 'es5'
-      }
+        trailingComma: 'es5',
+      },
     ],
     'react/forbid-prop-types': 1,
     'react/jsx-filename-extension': [0, { extensions: ['.js'] }],
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: ['**/*.test.js', '**/__tests__/**'] }
+      { devDependencies: ['**/*.test.js', '**/__tests__/**'] },
     ],
     'react/prefer-stateless-function': 0,
     'react/prop-types': 0,
     'react/require-default-props': 0,
-    'react/sort-comp': 0
+    'react/sort-comp': 0,
+    'react/destructuring-assignment': 0,
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.android.js', '.ios.js', '.native.js']
-      }
-    }
-  }
+        extensions: ['.js', '.android.js', '.ios.js', '.native.js'],
+      },
+    },
+  },
 };
