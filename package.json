@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "eslint": "^5.4.0"
+  },
+  "scripts": {
+    "test": "echo no tests"
   }
 }
