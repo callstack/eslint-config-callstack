@@ -1,4 +1,4 @@
-# eslint-config-callstack-io
+# eslint-config-callstack
 
 Callstack eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
 
@@ -19,19 +19,10 @@ Additionally, it sets these environments:
 }
 ```
 
-And for test files matching default Jest `testMatch`:
-```json
-{
-  "env": {
-    "jest/globals": true
-  }
-}
-```
-
 ## Installation
 
 ```
-yarn add --dev eslint eslint-config-callstack-io
+yarn add --dev eslint @callstack/eslint-config
 ```
 
 *Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like*
@@ -42,7 +33,7 @@ Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json
 
 ```json
 {
-    "extends": "callstack-io"
+    "extends": "@callstack"
 }
 ```
 
@@ -50,10 +41,9 @@ Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json
 
 ```json
 {
-    "extends": "callstack-io",
+    "extends": "@callstack",
     "rules": {
         "global-require": 0,
-        "react/destructuring-assignment": 0,
         "prefer-destructuring": 0
     }
 }
