@@ -50,11 +50,11 @@ Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json
 
 ```json
 {
-  "extends": "callstack-io",
+    "extends": "callstack-io",
     "rules": {
-      "global-require": 0,
-      "react/destructuring-assignment": 0,
-      "prefer-destructuring": 0
+        "global-require": 0,
+        "react/destructuring-assignment": 0,
+        "prefer-destructuring": 0
     }
 }
 ```
