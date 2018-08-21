@@ -4,6 +4,7 @@ module.exports = {
   extends: [
     'airbnb',
     'plugin:flowtype/recommended',
+    'plugin:jest/recommended',
     'prettier',
     'prettier/flowtype',
     'prettier/react'
