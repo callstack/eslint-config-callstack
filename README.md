@@ -48,3 +48,16 @@ Add to your eslint config (`.eslintrc`, or `eslintConfig` field in `package.json
     }
 }
 ```
+
+## Known issues
+
+Latest `create-react-app` ships with different version of `eslint-plugin-jsx-a11y` that causes the following error to happen as soon as you integrate the preset to your application: `Definition for rule 'jsx-a11y/label-has-associated-control' was not found`. 
+
+Thankfully, this can be easily fixed by using yarn resolution mechanism to tell it to use the right version.
+
+```js
+  "resolutions": {
+    "eslint-plugin-jsx-a11y": "6.1.1"
+  }
+```
+
