@@ -6,7 +6,11 @@
   "repository": "git@github.com:callstack/eslint-config-callstack.git",
   "author": "Michał Pierzchała <thymikee@gmail.com>",
   "license": "MIT",
-  "keywords": ["eslint", "eslint config", "callstack"],
+  "keywords": [
+    "eslint",
+    "eslint config",
+    "callstack"
+  ],
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "eslint-config-airbnb": "^17.1.0",
