@@ -1,5 +1,7 @@
 # eslint-config-callstack
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/callstack/eslint-config-callstack.svg)](https://greenkeeper.io/)
+
 Callstack eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
 
 Plugins and configs used:
