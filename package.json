@@ -24,7 +24,7 @@
     "prettier": "^1.14.2"
   },
   "peerDependencies": {
-    "eslint": ">=4"
+    "eslint": ">=5"
   },
   "devDependencies": {
     "eslint": "^5.4.0"
