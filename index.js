@@ -1,4 +1,7 @@
 const restrictedGlobals = require('eslint-restricted-globals');
+const OFF = 0;
+const WARNING = 1;
+const ERROR = 2;
 
 module.exports = {
   extends: [
@@ -17,28 +20,28 @@ module.exports = {
   parser: 'babel-eslint',
   plugins: ['flowtype', 'jest', 'prettier'],
   rules: {
-    'class-methods-use-this': 0,
-    'flowtype/no-weak-types': 1,
-    'flowtype/require-parameter-type': 0,
+    'class-methods-use-this': OFF,
+    'flowtype/no-weak-types': WARNING,
+    'flowtype/require-parameter-type': OFF,
     'flowtype/require-return-type': [
-      0,
+      OFF,
       'always',
       { annotateUndefined: 'never' },
     ],
-    'flowtype/require-valid-file-annotation': 2,
-    'import/extensions': 0,
-    'import/no-dynamic-require': 0,
-    'import/no-unresolved': 2,
-    'import/prefer-default-export': 0,
-    'new-cap': 0,
-    'no-class-assign': 0,
-    'no-duplicate-imports': 0,
-    'no-plusplus': 0,
+    'flowtype/require-valid-file-annotation': ERROR,
+    'import/extensions': OFF,
+    'import/no-dynamic-require': OFF,
+    'import/no-unresolved': ERROR,
+    'import/prefer-default-export': OFF,
+    'new-cap': OFF,
+    'no-class-assign': OFF,
+    'no-duplicate-imports': OFF,
+    'no-plusplus': OFF,
     'no-restricted-globals': ['error'].concat(restrictedGlobals),
     'no-restricted-syntax': ['error', 'WithStatement'],
-    'no-underscore-dangle': 0,
-    'no-unused-expressions': 0,
-    'no-use-before-define': 0,
+    'no-underscore-dangle': OFF,
+    'no-unused-expressions': OFF,
+    'no-use-before-define': OFF,
     'prettier/prettier': [
       'error',
       {
@@ -46,17 +49,17 @@ module.exports = {
         trailingComma: 'es5',
       },
     ],
-    'react/forbid-prop-types': 1,
-    'react/jsx-filename-extension': [0, { extensions: ['.js'] }],
+    'react/forbid-prop-types': WARNING,
+    'react/jsx-filename-extension': [OFF, { extensions: ['.js'] }],
     'import/no-extraneous-dependencies': [
       'error',
       { devDependencies: ['**/*.test.js', '**/__tests__/**'] },
     ],
-    'react/prefer-stateless-function': 0,
-    'react/prop-types': 0,
-    'react/require-default-props': 0,
-    'react/sort-comp': 0,
-    'react/destructuring-assignment': 0,
+    'react/prefer-stateless-function': OFF,
+    'react/prop-types': OFF,
+    'react/require-default-props': OFF,
+    'react/sort-comp': OFF,
+    'react/destructuring-assignment': OFF,
   },
   settings: {
     'import/resolver': {
