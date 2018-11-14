@@ -35,7 +35,6 @@ module.exports = {
     'import/prefer-default-export': OFF,
     'new-cap': OFF,
     'no-class-assign': OFF,
-    'no-duplicate-imports': OFF,
     'no-plusplus': OFF,
     'no-restricted-globals': ['error'].concat(restrictedGlobals),
     'no-restricted-syntax': ['error', 'WithStatement'],
