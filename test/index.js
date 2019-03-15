@@ -10,3 +10,11 @@ export default class Bool extends React.Component<Props> {
     return !!this.props.isTruthy;
   }
 }
+
+export function Hook() {
+  React.useEffect(() => {
+    localStorage.setItem('formData', 'data');
+  });
+
+  return <Bool />;
+}

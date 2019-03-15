@@ -497,6 +497,11 @@ eslint-plugin-prettier@^3.0.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
+eslint-plugin-react-hooks@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.5.1.tgz#3c601326914ee0e1fedd709115db4940bdbbed4a"
+  integrity sha512-i3dIrmZ+Ssrm0LrbbtuGcRf7EEpe1FaMuL8XnnpZO0X4tk3dZNzevWxD0/7nMAFa5yZQfNnYkfEP0MmwLvbdHw==
+
 eslint-plugin-react-native-globals@^0.1.1:
   version "0.1.2"
   resolved "https://artifactory.autozone.com:443/artifactory/api/npm/npm/eslint-plugin-react-native-globals/-/eslint-plugin-react-native-globals-0.1.2.tgz#ee1348bc2ceb912303ce6bdbd22e2f045ea86ea2"

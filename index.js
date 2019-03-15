@@ -19,7 +19,7 @@ module.exports = {
     'react-native/react-native': true
   },
   parser: 'babel-eslint',
-  plugins: ['flowtype', 'jest', 'prettier', 'react', 'react-native'],
+  plugins: ['flowtype', 'jest', 'prettier', 'react', 'react-native', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -69,7 +69,9 @@ module.exports = {
     'react-native/split-platform-components': OFF,
     'react-native/no-inline-styles': WARNING,
     'react-native/no-color-literals': WARNING,
-    'react-native/no-raw-text': ERROR
+    'react-native/no-raw-text': ERROR,
+    'react-hooks/rules-of-hooks': ERROR,
+    'react-hooks/exhaustive-deps': WARNING,
   },
   settings: {
     'import/resolver': {

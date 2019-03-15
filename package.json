@@ -22,6 +22,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-native": "^3.6.0",
+    "eslint-plugin-react-hooks": "^1.5.1",
     "prettier": "^1.14.2"
   },
   "peerDependencies": {
@@ -31,6 +32,6 @@
     "eslint": "^5.4.0"
   },
   "scripts": {
-    "test": "cd test && yarn && yarn eslint *.js"
+    "test": "yarn link && cd test && yarn && yarn link @callstack/eslint-config && yarn eslint *.js"
   }
 }
