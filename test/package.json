@@ -5,8 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@callstack/eslint-config": "..",
-    "eslint": "^5.4.0",
-    "react": "^16.4.2"
+    "@callstack/eslint-config": "*",
+    "eslint": "*",
+    "react": "*"
   }
 }
