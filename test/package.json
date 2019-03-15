@@ -8,5 +8,8 @@
     "@callstack/eslint-config": "*",
     "eslint": "*",
     "react": "*"
+  },
+  "devDependencies": {
+    "left-pad": "*"
   }
 }
