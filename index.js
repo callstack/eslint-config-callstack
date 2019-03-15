@@ -65,10 +65,10 @@ module.exports = {
     'react/require-default-props': OFF,
     'react/sort-comp': OFF,
     'react/destructuring-assignment': OFF,
-    'react-native/no-unused-styles': ERROR,
-    'react-native/split-platform-components': ERROR,
-    'react-native/no-inline-styles': ERROR,
-    'react-native/no-color-literals': ERROR,
+    'react-native/no-unused-styles': WARNING,
+    'react-native/split-platform-components': OFF,
+    'react-native/no-inline-styles': WARNING,
+    'react-native/no-color-literals': WARNING,
     'react-native/no-raw-text': ERROR
   },
   settings: {
