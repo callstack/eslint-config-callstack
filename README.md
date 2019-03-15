@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/callstack/eslint-config-callstack.svg)](https://greenkeeper.io/)
 
-Callstack eslint config utilizing Airbnb config, Flow, Prettier and Jest support.
+Callstack eslint config utilizing Flow, Prettier and Jest support.
 
 Plugins and configs used:
 * [eslint-config-prettier](https://yarnpkg.com/en/package/eslint-config-prettier)
