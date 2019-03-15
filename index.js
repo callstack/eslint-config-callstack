@@ -16,9 +16,15 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    'react-native/react-native': true
   },
   parser: 'babel-eslint',
-  plugins: ['flowtype', 'jest', 'prettier'],
+  plugins: ['flowtype', 'jest', 'prettier', 'react', 'react-native'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
   rules: {
     'class-methods-use-this': OFF,
     'flowtype/no-weak-types': WARNING,
@@ -59,6 +65,11 @@ module.exports = {
     'react/require-default-props': OFF,
     'react/sort-comp': OFF,
     'react/destructuring-assignment': OFF,
+    'react-native/no-unused-styles': ERROR,
+    'react-native/split-platform-components': OFF,
+    'react-native/no-inline-styles': WARNING,
+    'react-native/no-color-literals': WARNING,
+    'react-native/no-raw-text': ERROR
   },
   settings: {
     'import/resolver': {
