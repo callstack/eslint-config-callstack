@@ -66,6 +66,7 @@ module.exports = {
       },
     ],
     'react/prop-types': OFF,
+    'react/display-name': OFF,
     'react-native/no-unused-styles': ERROR,
     'react-native/split-platform-components': OFF,
     'react-native/no-inline-styles': WARNING,
