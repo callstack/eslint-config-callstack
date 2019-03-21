@@ -28,9 +28,12 @@
     "eslint": ">=5"
   },
   "devDependencies": {
-    "eslint": "^5.4.0"
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
+    "eslint": "^5.4.0",
+    "typescript": "^3.3.4000"
   },
   "scripts": {
-    "test": "yarn link && cd test && yarn && yarn link @callstack/eslint-config && yarn eslint *.js"
+    "test": "yarn --cwd test && yarn --cwd test eslint --ext .js,.ts,.tsx ."
   }
 }
