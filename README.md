@@ -15,6 +15,7 @@ Plugins and configs used:
   * [eslint-plugin-prettier](https://yarnpkg.com/en/package/eslint-plugin-prettier)
   * [eslint-plugin-jest](https://yarnpkg.com/en/package/eslint-plugin-jest)
   * [eslint-plugin-import](https://yarnpkg.com/en/package/eslint-plugin-import)
+  * [eslint-plugin-promise](https://yarnpkg.com/en/package/eslint-plugin-promise)
   * [eslint-plugin-flowtype](https://yarnpkg.com/en/package/eslint-plugin-flowtype)
   * [@typescript-eslint/eslint-plugin](https://yarnpkg.com/en/package/@typescript-eslint/eslint-plugin)
 
