@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:flowtype/recommended',
     'plugin:jest/recommended',
+    'plugin:promise/recommended',
     'prettier',
     'prettier/flowtype',
     'plugin:import/typescript'
@@ -39,6 +40,7 @@ module.exports = {
         trailingComma: 'es5',
       },
     ],
+    'promise/prefer-await-to-then': WARNING,
     'import/no-extraneous-dependencies': [
       ERROR,
       {
