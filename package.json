@@ -14,24 +14,25 @@
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-flowtype": "^3.4.2",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jest": "^22.4.0",
-    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-flowtype": "^3.6.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^1.5.1",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "eslint-plugin-react-native": "^3.6.0",
     "eslint-restricted-globals": "^0.2.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.17.0"
   },
   "peerDependencies": {
     "eslint": ">=5"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.5.0",
-    "@typescript-eslint/parser": "^1.5.0",
-    "eslint": "^5.4.0",
-    "typescript": "^3.3.4000"
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
+    "eslint": "^5.16.0",
+    "typescript": "^3.4.4"
   },
   "scripts": {
     "test": "yarn --cwd test && yarn --cwd test eslint --ext .js,.ts,.tsx ."

@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     require.resolve('./node.js'),
     'plugin:react/recommended',
+    'plugin:promise/recommended',
     'prettier/react',
   ],
   env: {
@@ -22,6 +23,7 @@ module.exports = {
     },
   },
   rules: {
+    'promise/prefer-await-to-then': WARNING,
     'react/prop-types': OFF,
     'react/display-name': OFF,
     'react-native/no-unused-styles': ERROR,
