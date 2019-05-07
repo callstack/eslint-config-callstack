@@ -24,8 +24,9 @@ module.exports = {
   },
   rules: {
     'promise/prefer-await-to-then': WARNING,
-    'react/prop-types': OFF,
     'react/display-name': OFF,
+    'react/no-multi-comp': OFF,
+    'react/prop-types': OFF,
     'react-native/no-unused-styles': ERROR,
     'react-native/split-platform-components': OFF,
     'react-native/no-inline-styles': WARNING,
