@@ -27,6 +27,7 @@ module.exports = {
     'react/prop-types': OFF,
     'react/display-name': OFF,
     'react-native/no-unused-styles': ERROR,
+    'no-unused-vars': [ERROR, { 'argsIgnorePattern': '^_', 'caughtErrorsIgnorePattern': '^_' }]
     'react-native/split-platform-components': OFF,
     'react-native/no-inline-styles': WARNING,
     'react-native/no-color-literals': WARNING,
