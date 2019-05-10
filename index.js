@@ -25,7 +25,7 @@ module.exports = {
   rules: {
     'promise/prefer-await-to-then': WARNING,
     'react/display-name': OFF,
-    'react/no-multi-comp': OFF,
+    'react/no-multi-comp': [WARNING, { "ignoreStateless": true }],
     'react/prop-types': OFF,
     'react-native/no-unused-styles': ERROR,
     'react-native/split-platform-components': OFF,
