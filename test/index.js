@@ -22,8 +22,8 @@ export function Hook() {
   React.useEffect(() => {
     try {
       localStorage.setItem('formData', 'data');
-    }
-    catch (_hugeObject) {
+    } catch (_hugeObject) {
+      // handled
     }
   });
 
