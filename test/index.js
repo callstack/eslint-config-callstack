@@ -14,11 +14,17 @@ export default class Bool extends React.Component<Props> {
     let token = await this.current.keepOwnership();
     return this.props.updateMode(token);
   };
+
+  animate = (_: ?number) => {};
 }
 
 export function Hook() {
   React.useEffect(() => {
-    localStorage.setItem('formData', 'data');
+    try {
+      localStorage.setItem('formData', 'data');
+    }
+    catch (_hugeObject) {
+    }
   });
 
   return <Bool />;
