@@ -26,6 +26,7 @@ module.exports = {
     'promise/prefer-await-to-then': WARNING,
     'react/display-name': OFF,
     'react/no-multi-comp': [WARNING, { "ignoreStateless": true }],
+    'react/no-unused-prop-types': OFF,
     'react/prop-types': OFF,
     'react-native/no-unused-styles': ERROR,
     'no-unused-vars': [ERROR, { 'argsIgnorePattern': '^_', 'caughtErrorsIgnorePattern': '^_' }],
