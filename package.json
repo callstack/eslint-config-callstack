@@ -29,7 +29,7 @@
     "eslint": ">=6"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^1.11.0",
     "eslint": "^6.0.0",
     "typescript": "^3.5.2"
