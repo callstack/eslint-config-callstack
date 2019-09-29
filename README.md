@@ -46,11 +46,23 @@ Node config:
 
 ## Installation
 
-```
+```bash
 yarn add --dev eslint @callstack/eslint-config
 ```
 
-*Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like*
+*Note: We're using `yarn` to install dependencies. Feel free to change commands to use `npm` 3+ and `npx` if you like*
+
+### For TypeScript project
+
+In order to use this config in TypeScript project make sure you have installed following dependencies:
+
+* [`@typescript-eslint/eslint-plugin`](https://yarnpkg.com/en/package/@typescript-eslint/eslint-plugin)
+* [`@typescript-eslint/parser`](https://yarnpkg.com/en/package/@typescript-eslint/parser)
+* [`typescript`](https://yarnpkg.com/en/package/typescript)
+
+```bash
+yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript
+```
 
 ## Usage
 
@@ -84,11 +96,30 @@ or
 
 ### TypeScript
 
-In order to use this config in TypeScript project make sure you have installed following dependencies:
+Extend your ESLint config using `plugin:import/typescript`, for example:
 
-* [`@typescript-eslint/eslint-plugin`](https://yarnpkg.com/en/package/@typescript-eslint/eslint-plugin)
-* [`@typescript-eslint/parser`](https://yarnpkg.com/en/package/@typescript-eslint/parser)
-* [`typescript`](https://yarnpkg.com/en/package/typescript)
+```json
+{
+  "extends": [
+    "@callstack",
+    "plugin:import/typescript"
+  ]
+}
+
+```
+
+If you are using VSCode, add to `.vscode/settings.json`:
+
+```json
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {"language": "typescript", "autoFix": true },
+    {"language": "typescriptreact", "autoFix": true }
+  ]
+}
+```
 
 Then when running ESLint add `--ext '.js,.ts'` (you might need also `.jsx, .tsx`) option, for example:
 
