@@ -28,6 +28,7 @@ module.exports = {
     'react/no-multi-comp': [WARNING, { "ignoreStateless": true }],
     'react/no-unused-prop-types': OFF,
     'react/prop-types': OFF,
+    'react/require-default-props': OFF,
     'react-native/no-unused-styles': ERROR,
     'no-unused-vars': [ERROR, { 'argsIgnorePattern': '^_', 'caughtErrorsIgnorePattern': '^_' }],
     'react-native/split-platform-components': OFF,
