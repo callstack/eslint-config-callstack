@@ -25,6 +25,7 @@ module.exports = {
   rules: {
     'promise/prefer-await-to-then': WARNING,
     'react/display-name': OFF,
+    'react/jsx-no-bind': [WARNING, { 'ignoreDOMComponents': true, 'ignoreRefs': true }],
     'react/no-multi-comp': [WARNING, { "ignoreStateless": true }],
     'react/no-unused-prop-types': OFF,
     'react/prop-types': OFF,
