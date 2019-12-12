@@ -2,7 +2,7 @@
 import React from 'react';
 
 type Props = {
-  isTruthy: string
+  isTruthy: string,
 };
 
 export default class Bool extends React.Component<Props> {
