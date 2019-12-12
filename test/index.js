@@ -11,7 +11,7 @@ export default class Bool extends React.Component<Props> {
   }
 
   onEnterKeyDown = async () => {
-    let token = await this.current.keepOwnership();
+    let token = await this.current?.keepOwnership();
     return this.props.updateMode(token);
   };
 
