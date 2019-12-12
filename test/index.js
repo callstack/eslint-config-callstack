@@ -2,7 +2,7 @@
 import React from 'react';
 
 type Props = {
-  isTruthy: string,
+  isTruthy: string
 };
 
 export default class Bool extends React.Component<Props> {
@@ -11,7 +11,7 @@ export default class Bool extends React.Component<Props> {
   }
 
   onEnterKeyDown = async () => {
-    let token = await this.current.keepOwnership();
+    let token = await this.current?.keepOwnership();
     return this.props.updateMode(token);
   };
 

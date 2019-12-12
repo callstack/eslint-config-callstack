@@ -70,6 +70,7 @@ module.exports = {
           ERROR,
           { argsIgnorePattern: '^_' },
         ],
+        '@typescript-eslint/prefer-optional-chain': ERROR,
         'no-dupe-class-members': OFF,
         'no-unused-vars': OFF,
       },
