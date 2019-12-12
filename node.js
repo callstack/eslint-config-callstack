@@ -33,13 +33,7 @@ module.exports = {
     'import/prefer-default-export': OFF,
     'no-restricted-globals': [ERROR].concat(restrictedGlobals),
     'no-restricted-syntax': [ERROR, 'WithStatement'],
-    'prettier/prettier': [
-      ERROR,
-      {
-        singleQuote: true,
-        trailingComma: 'es5',
-      },
-    ],
+    'prettier/prettier': ERROR,
     'promise/prefer-await-to-then': WARNING,
     'import/no-extraneous-dependencies': [
       ERROR,
