@@ -13,7 +13,6 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:promise/recommended',
     'prettier',
-    'prettier/flowtype'
   ],
   env: {
     es6: true,
@@ -51,7 +50,7 @@ module.exports = {
       files: ['*.js', '*.jsx'],
       parser: 'babel-eslint',
       plugins: ['flowtype'],
-      extends: ['plugin:flowtype/recommended'],
+      extends: ['plugin:flowtype/recommended', 'prettier/flowtype'],
       rules: {
         'no-unused-vars': [ERROR, NO_UNUSED_VARS_OPTIONS],
         'flowtype/no-weak-types': WARNING,

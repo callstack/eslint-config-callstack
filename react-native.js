@@ -8,7 +8,6 @@ module.exports = {
   extends: [
     require.resolve('./node.js'),
     'plugin:react/recommended',
-    'plugin:promise/recommended',
     'prettier/react',
   ],
   env: {
