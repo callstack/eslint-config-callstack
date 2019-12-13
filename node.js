@@ -16,7 +16,6 @@ module.exports = {
     'prettier/flowtype'
   ],
   env: {
-    browser: false,
     es6: true,
     node: true,
   },
