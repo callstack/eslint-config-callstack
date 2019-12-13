@@ -19,9 +19,11 @@ export default class Bool extends React.Component<Props> {
 }
 
 export function Hook() {
+  const map = new Map();
+
   React.useEffect(() => {
     try {
-      localStorage.setItem('formData', 'data');
+      map.get('formData');
     } catch (_hugeObject) {
       // handled
     }

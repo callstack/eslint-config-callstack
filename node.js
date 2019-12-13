@@ -1,20 +1,20 @@
 const restrictedGlobals = require('eslint-restricted-globals');
+const extensions = require('./extensions');
+
 const OFF = 0;
 const WARNING = 1;
 const ERROR = 2;
 
+const NO_UNUSED_VARS_OPTIONS = { 'argsIgnorePattern': '^_', 'caughtErrorsIgnorePattern': '^_' };
+
 module.exports = {
   extends: [
     'eslint:recommended',
-    'plugin:flowtype/recommended',
     'plugin:jest/recommended',
     'plugin:promise/recommended',
     'prettier',
-    'prettier/flowtype',
-    'plugin:import/typescript'
   ],
   env: {
-    browser: true,
     es6: true,
     node: true,
   },
@@ -47,10 +47,12 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '*.jsx'],
       parser: 'babel-eslint',
       plugins: ['flowtype'],
+      extends: ['plugin:flowtype/recommended', 'prettier/flowtype'],
       rules: {
+        'no-unused-vars': [ERROR, NO_UNUSED_VARS_OPTIONS],
         'flowtype/no-weak-types': WARNING,
         'flowtype/require-parameter-type': OFF,
         'flowtype/require-return-type': [
@@ -65,11 +67,19 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
+      settings: {
+        'import/extensions': [...extensions.TS, ...extensions.JS],
+        'import/parsers': {
+          '@typescript-eslint/parser': extensions.TS,
+        },
+        'import/resolver': {
+          'node': {
+            'extensions': [...extensions.TS, ...extensions.JS],
+          },
+        },
+      },
       rules: {
-        '@typescript-eslint/no-unused-vars': [
-          ERROR,
-          { argsIgnorePattern: '^_' },
-        ],
+        '@typescript-eslint/no-unused-vars': [ERROR, NO_UNUSED_VARS_OPTIONS],
         '@typescript-eslint/prefer-optional-chain': ERROR,
         'no-dupe-class-members': OFF,
         'no-unused-vars': OFF,
