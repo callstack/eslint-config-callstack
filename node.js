@@ -48,7 +48,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '*.jsx'],
       parser: 'babel-eslint',
       plugins: ['flowtype'],
       extends: ['plugin:flowtype/recommended'],

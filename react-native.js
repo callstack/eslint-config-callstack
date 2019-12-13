@@ -45,7 +45,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '*.jsx'],
       settings: {
         'import/extensions': [...extensions.JS, ...extensions.JS_REACT_NATIVE],
         'import/resolver': {
