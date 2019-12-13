@@ -2,7 +2,7 @@
   "name": "@callstack/eslint-config",
   "version": "8.0.0",
   "description": "ESLint preset extending Airbnb, Flow, Prettier and Jest",
-  "main": "index.js",
+  "main": "react-native.js",
   "repository": "git@github.com:callstack/eslint-config-callstack.git",
   "author": "Michał Pierzchała <thymikee@gmail.com>",
   "license": "MIT",
