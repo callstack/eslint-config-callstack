@@ -13,11 +13,7 @@ module.exports = {
   env: {
     'react-native/react-native': true,
   },
-  plugins: [
-    'react',
-    'react-native',
-    'react-hooks',
-  ],
+  plugins: ['react', 'react-native', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -25,7 +21,7 @@ module.exports = {
   },
   rules: {
     'react/display-name': OFF,
-    'react/no-multi-comp': [WARNING, { "ignoreStateless": true }],
+    'react/no-multi-comp': [WARNING, { ignoreStateless: true }],
     'react/no-unused-prop-types': OFF,
     'react/prop-types': OFF,
     'react/require-default-props': OFF,

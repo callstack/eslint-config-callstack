@@ -5,24 +5,24 @@ const OFF = 0;
 const WARNING = 1;
 const ERROR = 2;
 
-const NO_UNUSED_VARS_OPTIONS = { 'argsIgnorePattern': '^_', 'caughtErrorsIgnorePattern': '^_' };
+const NO_UNUSED_VARS_OPTIONS = {
+  argsIgnorePattern: '^_',
+  caughtErrorsIgnorePattern: '^_',
+};
+
+// Taken from Jest's default "testMatch" option
+const TEST_PATTERNS = [
+  '**/__tests__/**/*.[jt]s?(x)',
+  '**/?(*.)+(spec|test).[tj]s?(x)',
+];
 
 module.exports = {
-  extends: [
-    'eslint:recommended',
-    'plugin:jest/recommended',
-    'plugin:promise/recommended',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'plugin:promise/recommended', 'prettier'],
   env: {
     es6: true,
     node: true,
   },
-  plugins: [
-    'jest',
-    'prettier',
-    'import',
-  ],
+  plugins: ['prettier', 'import'],
   parserOptions: {
     sourceType: 'module',
   },
@@ -37,12 +37,7 @@ module.exports = {
     'promise/prefer-await-to-then': WARNING,
     'import/no-extraneous-dependencies': [
       ERROR,
-      {
-        devDependencies: [
-          '**/__tests__/**/*.[jt]s?(x)',
-          '**/?(*.)+(spec|test).[tj]s?(x)',
-        ],
-      },
+      { devDependencies: TEST_PATTERNS },
     ],
   },
   overrides: [
@@ -73,8 +68,8 @@ module.exports = {
           '@typescript-eslint/parser': extensions.TS,
         },
         'import/resolver': {
-          'node': {
-            'extensions': [...extensions.TS, ...extensions.JS],
+          node: {
+            extensions: [...extensions.TS, ...extensions.JS],
           },
         },
       },
@@ -86,11 +81,13 @@ module.exports = {
       },
     },
     {
-      files: ['*.{spec,test}.{js,ts,tsx}', '**/__tests__/**/*.{js,ts,tsx}'],
+      files: TEST_PATTERNS,
       env: {
         jest: true,
         'jest/globals': true,
       },
+      extends: ['plugin:jest/recommended'],
+      plugins: ['jest'],
     },
   ],
 };
