@@ -10,7 +10,7 @@ const NO_UNUSED_VARS_OPTIONS = {
   caughtErrorsIgnorePattern: '^_',
 };
 
-// Taken from Jest's default "testMatch" option
+// Taken from Jest's default "testMatch" config
 const TEST_PATTERNS = [
   '**/__tests__/**/*.[jt]s?(x)',
   '**/?(*.)+(spec|test).[tj]s?(x)',
