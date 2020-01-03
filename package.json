@@ -1,6 +1,6 @@
 {
   "name": "@callstack/eslint-config",
-  "version": "9.0.0",
+  "version": "9.1.0",
   "description": "ESLint preset extending Airbnb, Flow, Prettier and Jest",
   "main": "react-native.js",
   "repository": "git@github.com:callstack/eslint-config-callstack.git",
