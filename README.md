@@ -6,6 +6,10 @@ Callstack ESLint config utilizing Flow/TypeScript, Prettier, Jest, React and Rea
 
 Plugins and configs used:
 
+- React Native
+  - Default config
+  - [eslint-plugin-react-native-a11y](https://classic.yarnpkg.com/en/package/eslint-plugin-react-native-a11y)
+
 - Default config (w/ React and React Native):
   - Node config
   - [eslint-plugin-react](https://yarnpkg.com/en/package/eslint-plugin-react)
