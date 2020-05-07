@@ -1,5 +1,5 @@
 const JS = ['.js', '.jsx'];
-const TS = ['.ts', '.tsx', '.d.ts'];
+const TS = ['.ts', '.tsx', '.d.ts', ...JS];
 
 function generateExtensionsForPlatform(baseExts, platform) {
   return baseExts.map(ext => `.${platform}${ext}`);

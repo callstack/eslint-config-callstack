@@ -1,62 +1,28 @@
-# eslint-config-callstack
+# @callstack/eslint-config
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/callstack/eslint-config-callstack.svg)](https://greenkeeper.io/)
-
-Callstack ESLint config utilizing Flow/TypeScript, Prettier, Jest, React and React Native.
-
-Plugins and configs used:
-
-- Default config (w/ React and React Native):
-  - Node config
-  - [eslint-plugin-react](https://yarnpkg.com/en/package/eslint-plugin-react)
-  - [eslint-plugin-react-native](https://yarnpkg.com/en/package/eslint-plugin-react-native)
-  - [eslint-plugin-react-hooks](https://yarnpkg.com/en/package/eslint-plugin-react-hooks)
-  - [eslint-plugin-react-native-a11y](https://classic.yarnpkg.com/en/package/eslint-plugin-react-native-a11y)
-- Node config:
-  - [eslint-config-prettier](https://yarnpkg.com/en/package/eslint-config-prettier)
-  - [eslint-plugin-prettier](https://yarnpkg.com/en/package/eslint-plugin-prettier)
-  - [eslint-plugin-jest](https://yarnpkg.com/en/package/eslint-plugin-jest) (applied for tests only, based on Jest's `testMatch` config)
-  - [eslint-plugin-import](https://yarnpkg.com/en/package/eslint-plugin-import)
-  - [eslint-plugin-promise](https://yarnpkg.com/en/package/eslint-plugin-promise)
-  - [eslint-plugin-flowtype](https://yarnpkg.com/en/package/eslint-plugin-flowtype)
-  - [@typescript-eslint/eslint-plugin](https://yarnpkg.com/en/package/@typescript-eslint/eslint-plugin)
-
-Additionally, it sets these environments:
-
-Default config:
-
-```json
-{
-  "env": {
-    "es6": true,
-    "node": true,
-    "react-native/react-native": true
-  }
-}
-```
-
-Node config:
-
-```json
-{
-  "env": {
-    "es6": true,
-    "node": true
-  }
-}
-```
+Callstack ESLint config for React Native, React and Node.js projects, utilizing Flow, TypeScript, Prettier and Jest with sensible defaults.
 
 ## Installation
 
-```
+With Yarn:
+
+```bash
 yarn add --dev eslint @callstack/eslint-config
 ```
 
-_Note: We're using `yarn` to install deps. Feel free to change commands to use `npm` 3+ and `npx` if you like_
+Or with npm:
+
+```
+npm install --save-dev eslint @callstack/eslint-config
+```
 
 ## Usage
 
-Add to your ESLint config (`.eslintrc`, or `eslintConfig` field in `package.json`):
+You can choose one of the following environments to work with by extending your ESLint config (`.eslintrc`, or `eslintConfig` field in `package.json`) with `@callstack` config tailored to your project.
+
+### React Native config
+
+Usage:
 
 ```json
 {
@@ -64,13 +30,52 @@ Add to your ESLint config (`.eslintrc`, or `eslintConfig` field in `package.json
 }
 ```
 
-or for Node.js projects:
+Plugins used:
+
+- **React config**
+- [eslint-plugin-react-native](https://yarnpkg.com/en/package/eslint-plugin-react-native)
+- [eslint-plugin-react-native-a11y](https://classic.yarnpkg.com/en/package/eslint-plugin-react-native-a11y)
+
+Additionally, it sets `"react-native/react-native"` environment and native platform extensions to resolve.
+
+### React config
+
+Usage:
+
+```json
+{
+  "extends": "@callstack/eslint-config/react"
+}
+```
+
+Plugins used:
+
+- **Node config**
+- [eslint-plugin-react](https://yarnpkg.com/en/package/eslint-plugin-react)
+- [eslint-plugin-react-hooks](https://yarnpkg.com/en/package/eslint-plugin-react-hooks)
+
+### Node config
+
+Usage:
 
 ```json
 {
   "extends": "@callstack/eslint-config/node"
 }
 ```
+
+Plugins used:
+
+- [eslint-config-prettier](https://yarnpkg.com/en/package/eslint-config-prettier)
+- [eslint-plugin-prettier](https://yarnpkg.com/en/package/eslint-plugin-prettier)
+- [eslint-plugin-jest](https://yarnpkg.com/en/package/eslint-plugin-jest) (applied for tests only, based on Jest's `testMatch` config)
+- [eslint-plugin-import](https://yarnpkg.com/en/package/eslint-plugin-import)
+- [eslint-plugin-promise](https://yarnpkg.com/en/package/eslint-plugin-promise)
+- [eslint-plugin-flowtype](https://yarnpkg.com/en/package/eslint-plugin-flowtype)
+- [@typescript-eslint/eslint-plugin](https://yarnpkg.com/en/package/@typescript-eslint/eslint-plugin) (only for `.tsx?` files)
+- [@typescript-eslint/parser](https://yarnpkg.com/en/package/@typescript-eslint/parser) (only for `.tsx?` files)
+
+Additionally, it sets `es6` and `node` environments.
 
 ### Example of extending the configuration
 
