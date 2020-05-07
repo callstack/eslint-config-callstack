@@ -38,28 +38,4 @@ module.exports = {
       version: 'detect',
     },
   },
-  overrides: [
-    {
-      files: ['*.js', '*.jsx'],
-      settings: {
-        'import/extensions': extensions.ALL,
-        'import/resolver': {
-          node: {
-            extensions: extensions.ALL,
-          },
-        },
-      },
-    },
-    {
-      files: ['*.ts', '*.tsx'],
-      settings: {
-        'import/extensions': extensions.ALL,
-        'import/resolver': {
-          node: {
-            extensions: extensions.ALL,
-          },
-        },
-      },
-    },
-  ],
 };
