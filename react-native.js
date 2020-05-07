@@ -9,6 +9,7 @@ module.exports = {
     require.resolve('./node.js'),
     'plugin:react/recommended',
     'prettier/react',
+    'plugin:react-native-a11y/all',
   ],
   env: {
     'react-native/react-native': true,
