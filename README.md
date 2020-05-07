@@ -91,7 +91,7 @@ Additionally, it sets `es6` and `node` environments.
 
 ### TypeScript
 
-In order to use this config in TypeScript project make sure you have [`typescript`](https://yarnpkg.com/en/package/typescript) module installed.
+TypeScript is supported out-of-the-box. All you need to do is to make sure you have [`typescript`](https://yarnpkg.com/en/package/typescript) module installed.
 
 Then when running ESLint add `--ext '.js,.ts'` (you might need also `.jsx, .tsx`) option, for example:
 
