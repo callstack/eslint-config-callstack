@@ -8,6 +8,7 @@ module.exports = {
   extends: [
     require.resolve('./node.js'),
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'prettier/react',
     'plugin:react-native-a11y/all',
   ],
@@ -31,8 +32,6 @@ module.exports = {
     'react-native/no-inline-styles': WARNING,
     'react-native/no-color-literals': WARNING,
     'react-native/no-raw-text': ERROR,
-    'react-hooks/rules-of-hooks': ERROR,
-    'react-hooks/exhaustive-deps': WARNING,
   },
   settings: {
     react: {
