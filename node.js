@@ -31,6 +31,7 @@ module.exports = {
     'import/no-dynamic-require': OFF,
     'import/no-unresolved': ERROR,
     'import/prefer-default-export': OFF,
+    'import/order': ERROR,
     'no-restricted-globals': [ERROR].concat(restrictedGlobals),
     'no-restricted-syntax': [ERROR, 'WithStatement'],
     'prettier/prettier': ERROR,
