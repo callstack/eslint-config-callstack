@@ -38,28 +38,4 @@ module.exports = {
       version: 'detect',
     },
   },
-  overrides: [
-    {
-      files: ['*.js', '*.jsx'],
-      settings: {
-        'import/extensions': [...extensions.JS, ...extensions.JS_REACT_NATIVE],
-        'import/resolver': {
-          node: {
-            extensions: [...extensions.JS, ...extensions.JS_REACT_NATIVE],
-          },
-        },
-      },
-    },
-    {
-      files: ['*.ts', '*.tsx'],
-      settings: {
-        'import/extensions': extensions.ALL,
-        'import/resolver': {
-          node: {
-            extensions: extensions.ALL,
-          },
-        },
-      },
-    },
-  ],
 };

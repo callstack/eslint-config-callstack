@@ -46,6 +46,14 @@ module.exports = {
       parser: 'babel-eslint',
       plugins: ['flowtype'],
       extends: ['plugin:flowtype/recommended', 'prettier/flowtype'],
+      settings: {
+        'import/extensions': extensions.ALL,
+        'import/resolver': {
+          node: {
+            extensions: extensions.ALL,
+          },
+        },
+      },
       rules: {
         'no-unused-vars': [ERROR, NO_UNUSED_VARS_OPTIONS],
         'flowtype/no-weak-types': WARNING,
@@ -63,13 +71,13 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
       settings: {
-        'import/extensions': [...extensions.TS, ...extensions.JS],
+        'import/extensions': extensions.ALL,
         'import/parsers': {
           '@typescript-eslint/parser': extensions.TS,
         },
         'import/resolver': {
           node: {
-            extensions: [...extensions.TS, ...extensions.JS],
+            extensions: extensions.ALL,
           },
         },
       },
