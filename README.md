@@ -91,14 +91,37 @@ Additionally, it sets `es6` and `node` environments.
 
 ### TypeScript
 
-In order to use this config in TypeScript project make sure you have installed following dependencies:
-
-- [`@typescript-eslint/eslint-plugin`](https://yarnpkg.com/en/package/@typescript-eslint/eslint-plugin)
-- [`@typescript-eslint/parser`](https://yarnpkg.com/en/package/@typescript-eslint/parser)
-- [`typescript`](https://yarnpkg.com/en/package/typescript)
+In order to use this config in TypeScript project make sure you have [`typescript`](https://yarnpkg.com/en/package/typescript) module installed.
 
 Then when running ESLint add `--ext '.js,.ts'` (you might need also `.jsx, .tsx`) option, for example:
 
 ```bash
 yarn eslint --ext '.js,.ts' ./src
+```
+
+#### VSCode
+
+If you're VSCode user, you may find adding this config to your `.vscode/settings.json` helpful:
+
+```json
+{
+  "eslint.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ]
+}
 ```
