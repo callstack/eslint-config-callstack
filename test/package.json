@@ -5,11 +5,12 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@callstack/eslint-config": "link:..",
-    "eslint": "*",
-    "react": "*"
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
+    "@callstack/eslint-config": "link:..",
+    "eslint": "*",
     "left-pad": "*"
   }
 }

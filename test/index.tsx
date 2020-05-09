@@ -11,6 +11,7 @@ import ComponentTS from './ComponentTS'; // resolves .ts
 import ComponentAndroidTSX from './ComponentAndroidTSX'; // resolves .android.tsx
 import ComponentIosTS from './ComponentIosTS'; // resolves .ios.ts
 import ComponentNativeTSX from './ComponentNativeTSX'; // resolves .native.tsx
+import { View } from 'react-native'; // eslint-disable-line import/order
 
 type Props = {
   isTruthy: string;
@@ -50,5 +51,17 @@ export function Hook() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <Bool />;
+  return (
+    <>
+      {/* eslint-disable-next-line react-native/no-inline-styles, react-native/no-color-literals */}
+      <View style={{ color: 'blue' }}>
+        {/* eslint-disable-next-line react-native-a11y/has-accessibility-hint */}
+        <View accessibilityLabel={'xd'}>
+          {/* eslint-disable-line react-native/no-raw-text */}
+          raw text with no accessibility hint on a view
+        </View>
+      </View>
+      <Bool />
+    </>
+  );
 }
