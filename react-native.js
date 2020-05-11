@@ -21,10 +21,10 @@ module.exports = {
     {
       files: ['*.js', '*.jsx'],
       settings: {
-        'import/extensions': [...extensions.JS, ...extensions.JS_REACT_NATIVE],
+        'import/extensions': extensions.ALL,
         'import/resolver': {
           node: {
-            extensions: [...extensions.JS, ...extensions.JS_REACT_NATIVE],
+            extensions: extensions.ALL,
           },
         },
       },
@@ -32,7 +32,7 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       settings: {
-        'import/extensions': [...extensions.TS, ...extensions.TS_REACT_NATIVE],
+        'import/extensions': extensions.ALL,
         'import/parsers': {
           '@typescript-eslint/parser': [
             ...extensions.TS,
@@ -41,7 +41,7 @@ module.exports = {
         },
         'import/resolver': {
           node: {
-            extensions: [...extensions.TS, ...extensions.TS_REACT_NATIVE],
+            extensions: extensions.ALL,
           },
         },
       },

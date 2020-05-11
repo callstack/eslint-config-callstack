@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import leftPad from 'left-pad'; // eslint-disable-line import/no-extraneous-dependencies, @typescript-eslint/no-unused-vars
 // resolves JS extensions

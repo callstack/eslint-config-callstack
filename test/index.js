@@ -7,10 +7,10 @@ import ComponentAndroid from './ComponentAndroid'; // resolves .android.js
 import ComponentIos from './ComponentIos'; // resolves .ios.js
 import ComponentNative from './ComponentNative'; // resolves .native.js
 // resolves no TSX? extensions
-import ComponentTS from './ComponentTS'; // eslint-disable-line import/no-unresolved
-import ComponentAndroidTSX from './ComponentAndroidTSX'; // eslint-disable-line import/no-unresolved
-import ComponentIosTS from './ComponentIosTS'; // eslint-disable-line import/no-unresolved
-import ComponentNativeTSX from './ComponentNativeTSX'; // eslint-disable-line import/no-unresolved
+import ComponentTS from './ComponentTS'; // resolves .ts
+import ComponentAndroidTSX from './ComponentAndroidTSX'; // resolves .android.tsx
+import ComponentIosTS from './ComponentIosTS'; // resolves .ios.ts
+import ComponentNativeTSX from './ComponentNativeTSX'; // resolves .native.tsx
 import { View } from 'react-native'; // eslint-disable-line import/order
 
 type Props = {
