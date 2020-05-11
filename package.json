@@ -39,6 +39,6 @@
     "typescript": "^3.7.3"
   },
   "scripts": {
-    "test": "yarn --cwd test && yarn --cwd test eslint --report-unused-disable-directives --ext .js,.ts,.tsx ."
+    "test": "yarn --cwd test && yarn --cwd test eslint --report-unused-disable-directives --ext .js,.ts,.jsx,.tsx ."
   }
 }
