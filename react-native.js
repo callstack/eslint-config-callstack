@@ -5,11 +5,7 @@ const WARNING = 1;
 const ERROR = 2;
 
 module.exports = {
-  extends: [
-    require.resolve('./node.js'),
-    require.resolve('./react.js'),
-    'plugin:react-native-a11y/all',
-  ],
+  extends: [require.resolve('./react.js'), 'plugin:react-native-a11y/all'],
   env: {
     'react-native/react-native': true,
   },
