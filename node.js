@@ -48,10 +48,10 @@ module.exports = {
       plugins: ['flowtype'],
       extends: ['plugin:flowtype/recommended', 'prettier/flowtype'],
       settings: {
-        'import/extensions': extensions.ALL,
+        'import/extensions': [...extensions.JS, ...extensions.TS],
         'import/resolver': {
           node: {
-            extensions: extensions.ALL,
+            extensions: [...extensions.JS, ...extensions.TS],
           },
         },
       },
@@ -72,13 +72,13 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
       settings: {
-        'import/extensions': extensions.ALL,
+        'import/extensions': [...extensions.TS, ...extensions.JS],
         'import/parsers': {
           '@typescript-eslint/parser': extensions.TS,
         },
         'import/resolver': {
           node: {
-            extensions: extensions.ALL,
+            extensions: [...extensions.TS, ...extensions.JS],
           },
         },
       },
