@@ -8,6 +8,9 @@ module.exports = {
     'plugin:react/recommended',
     'prettier/react',
   ],
+  env: {
+    browser: true,
+  },
   plugins: ['react', 'react-hooks'],
   parserOptions: {
     ecmaFeatures: {
@@ -27,8 +30,5 @@ module.exports = {
     react: {
       version: 'detect',
     },
-  },
-  env: {
-    browser: true,
   },
 };
