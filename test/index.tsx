@@ -14,6 +14,7 @@ import { View } from 'react-native'; // eslint-disable-line import/order
 
 type Props = {
   isTruthy: string;
+  handleTuples: [string, number];
 };
 
 export default class Bool extends React.Component<Props> {
