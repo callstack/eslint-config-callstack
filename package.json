@@ -1,6 +1,6 @@
 {
   "name": "@callstack/eslint-config",
-  "version": "10.2.0",
+  "version": "11.0.0",
   "description": "ESLint preset extending Airbnb, Flow, Prettier and Jest",
   "engines": {
     "node": ">=10.13.0"
