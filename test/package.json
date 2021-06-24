@@ -11,6 +11,7 @@
   "devDependencies": {
     "@callstack/eslint-config": "link:..",
     "eslint": "*",
-    "left-pad": "*"
+    "left-pad": "*",
+    "jest": "*"
   }
 }
