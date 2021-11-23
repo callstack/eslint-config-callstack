@@ -48,7 +48,6 @@ module.exports = {
         "babelOptions": {
           "presets": ["@babel/preset-react", "@babel/preset-flow"]
        },
-        "requireConfigFile": false,
       },
       plugins: ['flowtype'],
       extends: ['plugin:flowtype/recommended'],
