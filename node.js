@@ -45,9 +45,9 @@ module.exports = {
       files: ['*.js', '*.jsx'],
       parser: '@babel/eslint-parser',
       parserOptions: {
-        babelOptions: {
-          presets: ['@babel/preset-flow'],
-        },
+        "babelOptions": {
+          "presets": ["@babel/preset-react", "@babel/preset-flow"]
+       },
       },
       plugins: ['flowtype'],
       extends: ['plugin:flowtype/recommended', 'prettier'],
