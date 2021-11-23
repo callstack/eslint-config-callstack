@@ -6,7 +6,7 @@ module.exports = {
   extends: [
     require.resolve('./node.js'),
     'plugin:react/recommended',
-    'prettier/react',
+    'prettier',
   ],
   env: {
     browser: true,

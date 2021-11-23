@@ -3,7 +3,7 @@
   "version": "11.0.0",
   "description": "ESLint preset extending Airbnb, Flow, Prettier and Jest",
   "engines": {
-    "node": ">=10.13.0"
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   },
   "main": "./react-native.js",
   "repository": "git@github.com:callstack/eslint-config-callstack.git",
@@ -15,28 +15,31 @@
     "callstack"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
-    "babel-eslint": "^10.0.3",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-flowtype": "^4.5.2",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jest": "^25.0.5",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^4.0.0",
-    "eslint-plugin-react-native": "^3.8.1",
-    "eslint-plugin-react-native-a11y": "^2.0.0",
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-flow": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-flowtype": "^7.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^3.11.0",
+    "eslint-plugin-react-native-a11y": "^3.0.0",
     "eslint-restricted-globals": "^0.2.0",
-    "prettier": "^2.0.4"
+    "prettier": "^2.4.1"
   },
   "peerDependencies": {
-    "eslint": ">=6"
+    "eslint": ">=7"
   },
   "devDependencies": {
-    "eslint": "^6.7.2",
-    "typescript": "^4.0.3"
+    "eslint": "^7.32.0",
+    "typescript": "^4.5.2"
   },
   "scripts": {
     "test": "yarn --cwd test && yarn --cwd test eslint --report-unused-disable-directives --ext .js,.ts,.jsx,.tsx ."
