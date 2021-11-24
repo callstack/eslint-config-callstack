@@ -34,6 +34,7 @@ module.exports = {
     'import/order': ERROR,
     'no-restricted-globals': [ERROR].concat(restrictedGlobals),
     'no-restricted-syntax': [ERROR, 'WithStatement'],
+    'prettier/prettier': ERROR,
     'promise/prefer-await-to-then': WARNING,
     'import/no-extraneous-dependencies': [
       ERROR,
@@ -45,12 +46,12 @@ module.exports = {
       files: ['*.js', '*.jsx'],
       parser: '@babel/eslint-parser',
       parserOptions: {
-        "babelOptions": {
-          "presets": ["@babel/preset-react", "@babel/preset-flow"]
+        'babelOptions': {
+          'presets': ['@babel/preset-react", "@babel/preset-flow']
        },
       },
       plugins: ['flowtype'],
-      extends: ['plugin:flowtype/recommended'],
+      extends: ['plugin:flowtype/recommended', 'prettier'],
       settings: {
         'import/extensions': [...extensions.JS, ...extensions.TS],
         'import/resolver': {
