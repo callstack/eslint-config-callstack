@@ -3,7 +3,7 @@
   "version": "11.0.0",
   "description": "ESLint preset extending Airbnb, Flow, Prettier and Jest",
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    "node": "^12.22.0 || ^13.14.0 || ^14.17.0 || ^15.3.0 || >=16.0.0"
   },
   "main": "./react-native.js",
   "repository": "git@github.com:callstack/eslint-config-callstack.git",
