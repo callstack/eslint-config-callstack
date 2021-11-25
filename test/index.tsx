@@ -36,8 +36,9 @@ export default class Bool extends React.Component<Props> {
     return this.props.updateMode(token);
   };
 
-  animate = (_: ?number) => {};
+  animate = (_: number) => {};
 }
+// eslint-disable-next-line prettier/prettier
 
 export function Hook() {
   const map = new Map();
