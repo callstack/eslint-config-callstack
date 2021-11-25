@@ -38,14 +38,15 @@ export default class Bool extends React.Component<Props> {
 
   animate = (_: ?number) => {};
 }
-// eslint-disable-next-line prettier/prettier
 
 export function Hook() {
   const map = new Map();
 
   React.useEffect(() => {
     try {
-      map.get('formData');
+      map.get(
+        // eslint-disable-next-line prettier/prettier
+        'formData');
     } catch (_hugeObject) {
       // handled
     }
