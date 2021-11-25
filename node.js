@@ -44,9 +44,14 @@ module.exports = {
   overrides: [
     {
       files: ['*.js', '*.jsx'],
-      parser: 'babel-eslint',
+      parser: '@babel/eslint-parser',
+      parserOptions: {
+        babelOptions: {
+          presets: ['@babel/preset-flow'],
+        },
+      },
       plugins: ['flowtype'],
-      extends: ['plugin:flowtype/recommended', 'prettier/flowtype'],
+      extends: ['plugin:flowtype/recommended', 'prettier'],
       settings: {
         'import/extensions': [...extensions.JS, ...extensions.TS],
         'import/resolver': {

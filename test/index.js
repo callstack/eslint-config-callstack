@@ -44,7 +44,9 @@ export function Hook() {
 
   React.useEffect(() => {
     try {
-      map.get('formData');
+      map.get(
+        // eslint-disable-next-line prettier/prettier
+        'formData');
     } catch (_hugeObject) {
       // handled
     }

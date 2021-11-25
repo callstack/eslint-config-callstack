@@ -36,7 +36,7 @@ export default class Bool extends React.Component<Props> {
     return this.props.updateMode(token);
   };
 
-  animate = (_: ?number) => {};
+  animate = (_: number) => {};
 }
 
 export function Hook() {
@@ -44,7 +44,9 @@ export function Hook() {
 
   React.useEffect(() => {
     try {
-      map.get('formData');
+      map.get(
+        // eslint-disable-next-line prettier/prettier
+        'formData');
     } catch (_hugeObject) {
       // handled
     }
