@@ -47,8 +47,8 @@ module.exports = {
       parser: '@babel/eslint-parser',
       parserOptions: {
         babelOptions: {
-          presets: ['@babel/preset-flow']
-       },
+          presets: ['@babel/preset-flow'],
+        },
       },
       plugins: ['flowtype'],
       extends: ['plugin:flowtype/recommended', 'prettier'],
