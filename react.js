@@ -13,16 +13,6 @@ module.exports = {
       jsx: true,
     },
   },
-  overrides: [
-    {
-      files: ['*.js', '*.jsx'],
-      parserOptions: {
-        babelOptions: {
-          presets: ['@babel/preset-react', '@babel/preset-flow'],
-        },
-      },
-    },
-  ],
   rules: {
     'react/display-name': OFF,
     'react/no-multi-comp': [WARNING, { ignoreStateless: true }],
