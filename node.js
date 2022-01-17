@@ -26,6 +26,11 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
+  settings: {
+    flowtype: {
+      onlyFilesWithFlowAnnotation: true,
+    },
+  },
   rules: {
     'import/extensions': OFF,
     'import/no-dynamic-require': OFF,
@@ -46,12 +51,10 @@ module.exports = {
       files: ['*.js', '*.jsx'],
       parser: '@babel/eslint-parser',
       parserOptions: {
-        babelOptions: {
-          presets: ['@babel/preset-flow'],
-        },
+        requireConfigFile: false
       },
       plugins: ['flowtype'],
-      extends: ['plugin:flowtype/recommended', 'prettier'],
+      extends: ['plugin:flowtype/recommended'],
       settings: {
         'import/extensions': [...extensions.JS, ...extensions.TS],
         'import/resolver': {
