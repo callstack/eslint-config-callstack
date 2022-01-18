@@ -78,7 +78,8 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint/eslint-plugin'],
+      plugins: ['@typescript-eslint'],
+      extends: ['plugin:@typescript-eslint/recommended'],
       settings: {
         'import/extensions': [...extensions.TS, ...extensions.JS],
         'import/parsers': {
