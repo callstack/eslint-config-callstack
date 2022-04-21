@@ -6,6 +6,7 @@ const WARNING = 1;
 const ERROR = 2;
 
 const NO_UNUSED_VARS_OPTIONS = {
+  ignoreRestSiblings: true,
   argsIgnorePattern: '^_',
   caughtErrorsIgnorePattern: '^_',
 };
