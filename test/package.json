@@ -11,7 +11,8 @@
   "devDependencies": {
     "@callstack/eslint-config": "link:..",
     "eslint": "*",
+    "jest": "*",
     "left-pad": "*",
-    "jest": "*"
+    "typescript": "^4.8.2"
   }
 }
