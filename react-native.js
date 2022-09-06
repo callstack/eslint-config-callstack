@@ -16,6 +16,7 @@ module.exports = {
     'react-native/no-inline-styles': WARNING,
     'react-native/no-color-literals': WARNING,
     'react-native/no-raw-text': ERROR,
+    'react-native-a11y/has-accessibility-hint': OFF,
   },
   overrides: [
     {
