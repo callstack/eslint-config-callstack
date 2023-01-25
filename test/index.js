@@ -57,11 +57,8 @@ export function Hook() {
     <>
       {/* eslint-disable-next-line react-native/no-inline-styles, react-native/no-color-literals */}
       <View style={{ color: 'blue' }}>
-        {/* eslint-disable-next-line react-native-a11y/has-accessibility-hint */}
-        <View accessibilityLabel={'xd'}>
-          {/* eslint-disable-line react-native/no-raw-text */}
-          raw text with no accessibility hint on a view
-        </View>
+        {/* eslint-disable-line react-native/no-raw-text */}
+        raw text with no accessibility hint on a view
       </View>
       <Bool />
     </>
