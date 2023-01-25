@@ -53,6 +53,11 @@ export function Hook() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // eslint-disable-next-line require-await
+  async () => {
+    new Promise((resolve) => resolve('test'));
+  };
+
   return (
     <>
       {/* eslint-disable-next-line react-native/no-inline-styles, react-native/no-color-literals */}
