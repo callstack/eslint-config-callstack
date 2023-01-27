@@ -45,13 +45,14 @@ module.exports = {
       ERROR,
       { devDependencies: TEST_PATTERNS },
     ],
+    'require-await': ERROR,
   },
   overrides: [
     {
       files: ['*.js', '*.jsx'],
       parser: '@babel/eslint-parser',
       parserOptions: {
-        requireConfigFile: false
+        requireConfigFile: false,
       },
       plugins: ['flowtype'],
       extends: ['plugin:flowtype/recommended'],
