@@ -80,6 +80,9 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint/eslint-plugin'],
+      parserOptions: {
+        project: './tsconfig.json'
+      },
       settings: {
         'import/extensions': [...extensions.TS, ...extensions.JS],
         'import/parsers': {
@@ -94,6 +97,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-unused-vars': [ERROR, NO_UNUSED_VARS_OPTIONS],
         '@typescript-eslint/prefer-optional-chain': ERROR,
+        '@typescript-eslint/no-floating-promises': ERROR,
         'no-dupe-class-members': OFF,
         'no-unused-vars': OFF,
         'no-undef': OFF,
