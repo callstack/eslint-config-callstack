@@ -99,6 +99,23 @@ Then when running ESLint add `--ext '.js,.ts'` (you might need also `.jsx, .tsx`
 yarn eslint --ext '.js,.ts' ./src
 ```
 
+`parserOptions.project` is set to `./tsconfig.json`. You may need to [adjust that](https://typescript-eslint.io/architecture/parser#project).
+
+To do so, you'll need to override our setup for TS files in your ESLint config:
+
+```json
+{
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "./packages/**/tsconfig.json"
+      }
+    }
+  ]
+}
+```
+
 #### VSCode
 
 If you're VSCode user, you may find adding this config to your `.vscode/settings.json` helpful:

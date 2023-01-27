@@ -55,6 +55,7 @@ export function Hook() {
 
   // eslint-disable-next-line require-await
   async () => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     new Promise((resolve) => resolve('test'));
   };
 
