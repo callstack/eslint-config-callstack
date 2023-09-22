@@ -3,7 +3,7 @@
   "version": "13.0.2",
   "description": "ESLint preset extending recommended ESLint config, TypeScript, Prettier and Jest",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "main": "./react-native.js",
   "repository": "git@github.com:callstack/eslint-config-callstack.git",
