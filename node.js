@@ -39,6 +39,7 @@ module.exports = {
     'import/order': ERROR,
     'no-restricted-globals': [ERROR].concat(restrictedGlobals),
     'no-restricted-syntax': [ERROR, 'WithStatement'],
+    'no-constant-binary-expression': ERROR,
     'prettier/prettier': ERROR,
     'promise/prefer-await-to-then': WARNING,
     'import/no-extraneous-dependencies': [
