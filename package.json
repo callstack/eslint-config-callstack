@@ -1,6 +1,6 @@
 {
   "name": "@callstack/eslint-config",
-  "version": "14.1.1",
+  "version": "14.2.0",
   "description": "ESLint preset extending recommended ESLint config, TypeScript, Prettier and Jest",
   "engines": {
     "node": ">=18.0.0"
