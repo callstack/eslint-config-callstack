@@ -10,7 +10,6 @@ DynamicColorIOS('red'); // required object as first argument
 
 // Valid
 PlatformColor('bogusName', 'linkColor');
-
 PlatformColor('label');
 PlatformColor('@android:color/holo_blue_bright');
 
