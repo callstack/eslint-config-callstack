@@ -9,8 +9,9 @@ module.exports = {
   env: {
     'react-native/react-native': true,
   },
-  plugins: ['react-native'],
+  plugins: ['react-native', '@react-native'],
   rules: {
+    '@react-native/platform-colors': WARNING,
     'react-native/no-unused-styles': ERROR,
     'react-native/split-platform-components': OFF,
     'react-native/no-inline-styles': WARNING,
