@@ -23,6 +23,7 @@
     "@babel/eslint-parser": "^7.22.15",
     "@babel/plugin-syntax-flow": "^7.22.5",
     "@babel/plugin-transform-react-jsx": "^7.22.15",
+    "@react-native/eslint-plugin": "^0.74.0 || ^0.73.0 || ^0.72.0",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "eslint-config-prettier": "^9.0.0",
@@ -46,6 +47,6 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "test": "yarn --cwd test && yarn --cwd test eslint --report-unused-disable-directives --ext .js,.ts,.jsx,.tsx ."
+    "test": "yarn --cwd test && yarn --cwd test eslint --max-warnings 0 --report-unused-disable-directives --ext .js,.ts,.jsx,.tsx ."
   }
 }
