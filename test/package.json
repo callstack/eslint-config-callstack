@@ -9,9 +9,11 @@
     "react-native": "*"
   },
   "devDependencies": {
+    "@babel/helper-hoist-variables": "^7.24.7",
     "@callstack/eslint-config": "link:..",
-    "eslint": "*",
-    "jest": "*",
+    "eslint8": "npm:eslint@8",
+    "eslint9": "npm:eslint@9",
+    "jest": "^29",
     "left-pad": "*",
     "typescript": "^4.8.2"
   }
