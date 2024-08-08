@@ -1,3 +1,3 @@
 const createReactConfig = require('./react.factory');
 
-module.exports = createReactConfig(false);
+module.exports = createReactConfig(true);
