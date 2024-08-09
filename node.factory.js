@@ -103,7 +103,9 @@ function createNodeConfig(bFlatConfig) {
 
     // move the parserOptions & parser properties to the languageOptions object to support flat config
     // TODO: strip the below as soon as eslint-plugin-flowtype supports eslint@9
-    const pluginFlowtypeRecommendedConfig = pluginFlowtype.configs.recommended;
+    const pluginFlowtypeRecommendedConfig = {
+      ...pluginFlowtype.configs.recommended,
+    };
 
     if (!pluginFlowtypeRecommendedConfig.languageOptions)
       pluginFlowtypeRecommendedConfig.languageOptions = {};
@@ -113,7 +115,8 @@ function createNodeConfig(bFlatConfig) {
     pluginFlowtypeRecommendedConfig.languageOptions.parser =
       pluginFlowtypeRecommendedConfig.parser;
 
-    // do not delete the original properties to maintain a backwards compatibility with eslint < 9
+    delete pluginFlowtypeRecommendedConfig.parser;
+    delete pluginFlowtypeRecommendedConfig.parserOptions;
 
     // since eslint-plugin-flowtype does not support eslint@9 yet, rules do not
     // have the meta.schema property set, which is now required; this results in
