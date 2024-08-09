@@ -49,6 +49,6 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "test": "yarn --cwd test && yarn --cwd test eslint --max-warnings 0 --report-unused-disable-directives --ext .js,.ts,.jsx,.tsx ."
+    "test": "yarn --cwd=test && yarn --cwd=test workspaces run test"
   }
 }

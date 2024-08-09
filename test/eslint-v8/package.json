@@ -1,0 +1,13 @@
+{
+  "name": "plugin-test-eslint-v8",
+  "version": "0.0.0",
+  "description": "test",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint8": "npm:eslint@^8.57.0"
+  },
+  "scripts": {
+    "test": "cd .. && node ./node_modules/eslint8/bin/eslint.js --max-warnings=0 --report-unused-disable-directives --config=eslint-v8/.eslintrc.js ."
+  }
+}

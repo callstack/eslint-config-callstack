@@ -1,0 +1,14 @@
+{
+  "name": "plugin-test-eslint-v9",
+  "version": "0.0.0",
+  "description": "test",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint9": "npm:eslint@^9.8.0"
+  },
+  "scripts": {
+    "test": "cd .. && node ./node_modules/eslint9/bin/eslint.js --max-warnings=0 --report-unused-disable-directives --config=./eslint-v9/eslint.config.mjs ."
+  }
+}

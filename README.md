@@ -35,7 +35,7 @@ Usage:
 #### flat config format (`eslint.config.mjs`, ESLint 9+)
 
 ```js
-import callstackConfig from '@callstack/eslint-config';
+import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
 
 export default [
   {
@@ -75,7 +75,7 @@ Usage:
 #### flat config format (`eslint.config.mjs`, ESLint 9+)
 
 ```js
-import callstackConfigReact from '@callstack/eslint-config/react.js';
+import callstackConfigReact from '@callstack/eslint-config/react.flat.js';
 
 export default [
   {
@@ -113,7 +113,7 @@ Usage:
 #### flat config format (`eslint.config.mjs`, ESLint 9+)
 
 ```js
-import callstackConfigNode from '@callstack/eslint-config/node.js';
+import callstackConfigNode from '@callstack/eslint-config/node.flat.js';
 
 export default [
   {
@@ -160,7 +160,7 @@ Additionally, it sets `es6` and `node` environments.
 ##### flat config format (`eslint.config.mjs`, ESLint 9+)
 
 ```js
-import callstackConfig from '@callstack/eslint-config';
+import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
 
 export default [
   ...callstackConfig,
@@ -204,10 +204,10 @@ To do so, you'll need to override our setup for TS files in your ESLint config:
 
 ##### flat config format (`eslint.config.mjs`, ESLint 9+)
 
-In the flat config, just append another configuration object to the array:
+In the flat config, just append another configuration object to the array and be sure to import the `/react-native.flat` file:
 
 ```js
-import callstackConfig from '@callstack/eslint-config';
+import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
 import tsEslintParser from '@typescript-eslint/parser';
 
 export default [
