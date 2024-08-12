@@ -34,6 +34,11 @@ function createReactConfig(bFlatConfig) {
 
     return [
       ...nodeConfig,
+      {
+        plugins: {
+          'react-hooks': fixupPluginRules(reactHooksPlugin),
+        },
+      },
       reactPlugin.configs.flat.recommended,
       {
         languageOptions: {
@@ -42,7 +47,6 @@ function createReactConfig(bFlatConfig) {
         },
         plugins: {
           react: reactPlugin,
-          'react-hooks': fixupPluginRules(reactHooksPlugin),
         },
         ...commonConfig,
       },

@@ -4,16 +4,16 @@ const OFF = 0;
 const WARNING = 1;
 const ERROR = 2;
 
-const commonReactNativePluginsConfig = {
-    rules: {
-      '@react-native/platform-colors': WARNING,
-      'react-native/no-unused-styles': ERROR,
-      'react-native/split-platform-components': OFF,
-      'react-native/no-inline-styles': WARNING,
-      'react-native/no-color-literals': WARNING,
-      'react-native/no-raw-text': ERROR,
-      'react-native-a11y/has-accessibility-hint': OFF,
-    },
+const commonAtReactNativePluginRules = {
+    '@react-native/platform-colors': WARNING,
+  },
+  commonReactNativePluginRules = {
+    'react-native/no-unused-styles': ERROR,
+    'react-native/split-platform-components': OFF,
+    'react-native/no-inline-styles': WARNING,
+    'react-native/no-color-literals': WARNING,
+    'react-native/no-raw-text': ERROR,
+    'react-native-a11y/has-accessibility-hint': OFF,
   },
   jsFilesCommonSettings = {
     'import/extensions': extensions.ALL,
@@ -64,6 +64,10 @@ function createRNConfig(bFlatConfig) {
         },
       },
       {
+        plugins: { '@react-native': rnPluginEslint },
+        rules: commonAtReactNativePluginRules,
+      },
+      {
         languageOptions: {
           // below globals listed manually - as in https://github.com/Intellicode/eslint-plugin-react-native/blob/master/index.js
           // since the plugin does not support eslint@9 yet
@@ -73,9 +77,8 @@ function createRNConfig(bFlatConfig) {
         },
         plugins: {
           'react-native': fixupPluginRules(eslintPluginReactNative),
-          '@react-native': rnPluginEslint,
         },
-        ...commonReactNativePluginsConfig,
+        rules: commonReactNativePluginRules,
       },
       // below two objects: ported 'overrides' from the above object
       {
@@ -94,7 +97,10 @@ function createRNConfig(bFlatConfig) {
         'react-native/react-native': true,
       },
       plugins: ['react-native', '@react-native'],
-      ...commonReactNativePluginsConfig,
+      rules: {
+        ...commonAtReactNativePluginRules,
+        ...commonReactNativePluginRules,
+      },
       overrides: [
         {
           files: ['*.js', '*.jsx'],

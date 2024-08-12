@@ -142,8 +142,8 @@ function createNodeConfig(bFlatConfig) {
           },
         },
         plugins: {
-          prettier: pluginPrettier,
           import: pluginImport,
+          prettier: pluginPrettier,
         },
         ...baseConfigOptions,
       },
