@@ -12,7 +12,7 @@
   "devDependencies": {
     "@babel/helper-hoist-variables": "^7.24.7",
     "@callstack/eslint-config": "link:..",
-    "jest": "^29",
+    "jest": "*",
     "left-pad": "*",
     "typescript": "^4.8.2"
   },
