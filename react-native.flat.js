@@ -1,3 +1,3 @@
-const createRNConfig = require('./react-native.factory');
+const { createFlatRNConfig } = require('./react-native.factory');
 
-module.exports = createRNConfig(true);
+module.exports = createFlatRNConfig();

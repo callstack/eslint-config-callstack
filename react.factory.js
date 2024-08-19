@@ -24,44 +24,47 @@ const commonParserOptions = {
     },
   };
 
-function createReactConfig(bFlatConfig) {
-  if (bFlatConfig) {
-    const nodeConfig = require('./node.flat.js');
-    const reactPlugin = require('eslint-plugin-react');
-    const reactHooksPlugin = require('eslint-plugin-react-hooks');
-    const globals = require('globals');
-    const { fixupPluginRules } = require('@eslint/compat');
+function createFlatReactConfig() {
+  const nodeConfig = require('./node.flat.js');
+  const reactPlugin = require('eslint-plugin-react');
+  const reactHooksPlugin = require('eslint-plugin-react-hooks');
+  const globals = require('globals');
+  const { fixupPluginRules } = require('@eslint/compat');
 
-    return [
-      ...nodeConfig,
-      {
-        plugins: {
-          'react-hooks': fixupPluginRules(reactHooksPlugin),
-        },
+  return [
+    ...nodeConfig,
+    {
+      plugins: {
+        'react-hooks': fixupPluginRules(reactHooksPlugin),
       },
-      reactPlugin.configs.flat.recommended,
-      {
-        languageOptions: {
-          globals: globals.browser,
-          parserOptions: commonParserOptions,
-        },
-        plugins: {
-          react: reactPlugin,
-        },
-        ...commonConfig,
+    },
+    reactPlugin.configs.flat.recommended,
+    {
+      languageOptions: {
+        globals: globals.browser,
+        parserOptions: commonParserOptions,
       },
-    ];
-  } else {
-    return {
-      extends: [require.resolve('./node.js'), 'plugin:react/recommended'],
-      env: {
-        browser: true,
+      plugins: {
+        react: reactPlugin,
       },
-      plugins: ['react', 'react-hooks'],
-      parserOptions: commonParserOptions,
       ...commonConfig,
-    };
-  }
+    },
+  ];
 }
 
-module.exports = createReactConfig;
+function createLegacyReactConfig() {
+  return {
+    extends: [require.resolve('./node.js'), 'plugin:react/recommended'],
+    env: {
+      browser: true,
+    },
+    plugins: ['react', 'react-hooks'],
+    parserOptions: commonParserOptions,
+    ...commonConfig,
+  };
+}
+
+module.exports = {
+  createFlatReactConfig,
+  createLegacyReactConfig,
+};

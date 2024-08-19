@@ -1,3 +1,3 @@
-const createReactConfig = require('./react.factory');
+const { createLegacyReactConfig } = require('./react.factory');
 
-module.exports = createReactConfig(false);
+module.exports = createLegacyReactConfig();

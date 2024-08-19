@@ -1,3 +1,3 @@
-const createReactConfig = require('./react.factory');
+const { createFlatReactConfig } = require('./react.factory');
 
-module.exports = createReactConfig(true);
+module.exports = createFlatReactConfig();

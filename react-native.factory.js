@@ -38,81 +38,84 @@ const commonAtReactNativePluginRules = {
     },
   };
 
-function createRNConfig(bFlatConfig) {
-  if (bFlatConfig) {
-    const reactConfig = require('./react.flat.js');
-    const pluginA11y = require('eslint-plugin-react-native-a11y');
-    const eslintPluginReactNative = require('eslint-plugin-react-native');
-    const rnPluginEslint = require('@react-native/eslint-plugin');
-    const { fixupPluginRules } = require('@eslint/compat');
+function createFlatRNConfig() {
+  const reactConfig = require('./react.flat.js');
+  const pluginA11y = require('eslint-plugin-react-native-a11y');
+  const eslintPluginReactNative = require('eslint-plugin-react-native');
+  const rnPluginEslint = require('@react-native/eslint-plugin');
+  const { fixupPluginRules } = require('@eslint/compat');
 
-    // TODO: strip the below as soon as eslint-plugin-react-native-a11y supports eslint@9
-    const pluginA11yConfigBase = { ...pluginA11y.configs.all };
-    delete pluginA11yConfigBase.parserOptions;
+  // TODO: strip the below as soon as eslint-plugin-react-native-a11y supports eslint@9
+  const pluginA11yConfigBase = { ...pluginA11y.configs.all };
+  delete pluginA11yConfigBase.parserOptions;
 
-    return [
-      ...reactConfig,
-      {
-        ...pluginA11yConfigBase,
-        // eslint-plugin-react-native-a11y does not support eslint@9 yet and: specifies plugins in array form & parserOptions in root, which we patch this here
-        // TODO: strip the below as soon as eslint-plugin-react-native-a11y supports eslint@9
-        plugins: {
-          'react-native-a11y': pluginA11y,
-        },
-        languageOptions: {
-          parserOptions: pluginA11y.configs.all.parserOptions,
-        },
+  return [
+    ...reactConfig,
+    {
+      ...pluginA11yConfigBase,
+      // eslint-plugin-react-native-a11y does not support eslint@9 yet and: specifies plugins in array form & parserOptions in root, which we patch this here
+      // TODO: strip the below as soon as eslint-plugin-react-native-a11y supports eslint@9
+      plugins: {
+        'react-native-a11y': pluginA11y,
       },
-      {
-        plugins: { '@react-native': rnPluginEslint },
-        rules: commonAtReactNativePluginRules,
+      languageOptions: {
+        parserOptions: pluginA11y.configs.all.parserOptions,
       },
-      {
-        languageOptions: {
-          // below globals listed manually - as in https://github.com/Intellicode/eslint-plugin-react-native/blob/master/index.js
-          // since the plugin does not support eslint@9 yet
-          // TODO: strip the below as soon as eslint-plugin-react-native-globals supports eslint@9
-          globals: require('eslint-plugin-react-native-globals').environments
-            .all.globals,
-        },
-        plugins: {
-          'react-native': fixupPluginRules(eslintPluginReactNative),
-        },
-        rules: commonReactNativePluginRules,
+    },
+    {
+      plugins: { '@react-native': rnPluginEslint },
+      rules: commonAtReactNativePluginRules,
+    },
+    {
+      languageOptions: {
+        // below globals listed manually - as in https://github.com/Intellicode/eslint-plugin-react-native/blob/master/index.js
+        // since the plugin does not support eslint@9 yet
+        // TODO: strip the below as soon as eslint-plugin-react-native-globals supports eslint@9
+        globals: require('eslint-plugin-react-native-globals').environments.all
+          .globals,
       },
-      // below two objects: ported 'overrides' from the above object
+      plugins: {
+        'react-native': fixupPluginRules(eslintPluginReactNative),
+      },
+      rules: commonReactNativePluginRules,
+    },
+    // below two objects: ported 'overrides' from the above object
+    {
+      files: ['**/*.js', '**/*.jsx'],
+      settings: jsFilesCommonSettings,
+    },
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      settings: tsFilesCommonSettings,
+    },
+  ];
+}
+
+function createLegacyRNConfig() {
+  return {
+    extends: [require.resolve('./react.js'), 'plugin:react-native-a11y/all'],
+    env: {
+      'react-native/react-native': true,
+    },
+    plugins: ['react-native', '@react-native'],
+    rules: {
+      ...commonAtReactNativePluginRules,
+      ...commonReactNativePluginRules,
+    },
+    overrides: [
       {
-        files: ['**/*.js', '**/*.jsx'],
+        files: ['*.js', '*.jsx'],
         settings: jsFilesCommonSettings,
       },
       {
-        files: ['**/*.ts', '**/*.tsx'],
+        files: ['*.ts', '*.tsx'],
         settings: tsFilesCommonSettings,
       },
-    ];
-  } else {
-    return {
-      extends: [require.resolve('./react.js'), 'plugin:react-native-a11y/all'],
-      env: {
-        'react-native/react-native': true,
-      },
-      plugins: ['react-native', '@react-native'],
-      rules: {
-        ...commonAtReactNativePluginRules,
-        ...commonReactNativePluginRules,
-      },
-      overrides: [
-        {
-          files: ['*.js', '*.jsx'],
-          settings: jsFilesCommonSettings,
-        },
-        {
-          files: ['*.ts', '*.tsx'],
-          settings: tsFilesCommonSettings,
-        },
-      ],
-    };
-  }
+    ],
+  };
 }
 
-module.exports = createRNConfig;
+module.exports = {
+  createFlatRNConfig,
+  createLegacyRNConfig,
+};

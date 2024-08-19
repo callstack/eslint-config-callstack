@@ -1,3 +1,3 @@
-const createNodeConfig = require('./node.factory');
+const { createLegacyNodeConfig } = require('./node.factory');
 
-module.exports = createNodeConfig(false);
+module.exports = createLegacyNodeConfig();

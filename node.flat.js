@@ -1,3 +1,3 @@
-const createNodeConfig = require('./node.factory');
+const { createFlatNodeConfig } = require('./node.factory');
 
-module.exports = createNodeConfig(true);
+module.exports = createFlatNodeConfig();
