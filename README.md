@@ -1,6 +1,6 @@
 # @callstack/eslint-config
 
-Callstack ESLint config for React Native, React and Node.js projects, utilizing Flow, TypeScript, Prettier and Jest with sensible defaults.
+Callstack ESLint config for React Native, React and Node.js projects, utilizing Flow, TypeScript, Prettier and Jest with sensible defaults. Supports both eslintrc and flat config.
 
 ## Installation
 
@@ -18,16 +18,38 @@ npm install --save-dev eslint @callstack/eslint-config
 
 ## Usage
 
-You can choose one of the following environments to work with by extending your ESLint config (`.eslintrc`, or `eslintConfig` field in `package.json`) with `@callstack` config tailored to your project.
+You can choose one of the following environments to work with by extending your ESLint config (`eslint.config.mjs` for flat config, or `.eslintrc` / `eslintConfig` field in `package.json` for the eslintrc config style) with `@callstack` config tailored to your project.
 
 ### React Native config
 
 Usage:
 
+#### eslintrc format (ESLint < v9)
+
 ```json
 {
   "extends": "@callstack"
 }
+```
+
+#### flat config format (`eslint.config.mjs`, ESLint 9+)
+
+```js
+import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
+
+export default [
+  {
+    ignores: [
+      // ignored files go here
+    ],
+  },
+  ...callstackConfig,
+  {
+    rules: {
+      // your custom rules
+    },
+  },
+];
 ```
 
 Plugins used:
@@ -42,10 +64,32 @@ Additionally, it sets `"react-native/react-native"` environment and native platf
 
 Usage:
 
+#### eslintrc format (ESLint < v9)
+
 ```json
 {
   "extends": "@callstack/eslint-config/react"
 }
+```
+
+#### flat config format (`eslint.config.mjs`, ESLint 9+)
+
+```js
+import callstackConfigReact from '@callstack/eslint-config/react.flat.js';
+
+export default [
+  {
+    ignores: [
+      // ignored files go here
+    ],
+  },
+  ...callstackConfigReact,
+  {
+    rules: {
+      // your custom rules
+    },
+  },
+];
 ```
 
 Plugins used:
@@ -58,10 +102,32 @@ Plugins used:
 
 Usage:
 
+#### eslintrc format (ESLint < v9)
+
 ```json
 {
   "extends": "@callstack/eslint-config/node"
 }
+```
+
+#### flat config format (`eslint.config.mjs`, ESLint 9+)
+
+```js
+import callstackConfigNode from '@callstack/eslint-config/node.flat.js';
+
+export default [
+  {
+    ignores: [
+      // ignored files go here
+    ],
+  },
+  ...callstackConfigNode,
+  {
+    rules: {
+      // your custom rules
+    },
+  },
+];
 ```
 
 Plugins used:
@@ -79,6 +145,8 @@ Additionally, it sets `es6` and `node` environments.
 
 ### Example of extending the configuration
 
+##### eslintrc format (ESLint < v9)
+
 ```json
 {
   "extends": "@callstack",
@@ -87,6 +155,22 @@ Additionally, it sets `es6` and `node` environments.
     "prefer-destructuring": 0
   }
 }
+```
+
+##### flat config format (`eslint.config.mjs`, ESLint 9+)
+
+```js
+import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
+
+export default [
+  ...callstackConfig,
+  {
+    rules: {
+      'global-require': 0,
+      'prefer-destructuring': 0,
+    },
+  },
+];
 ```
 
 ### TypeScript
@@ -103,6 +187,8 @@ yarn eslint --ext '.js,.ts' ./src
 
 To do so, you'll need to override our setup for TS files in your ESLint config:
 
+##### eslintrc format (ESLint < v9)
+
 ```json
 {
   "overrides": [
@@ -114,6 +200,26 @@ To do so, you'll need to override our setup for TS files in your ESLint config:
     }
   ]
 }
+```
+
+##### flat config format (`eslint.config.mjs`, ESLint 9+)
+
+In the flat config, just append another configuration object to the array and be sure to import the `/react-native.flat` file:
+
+```js
+import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
+import tsEslintParser from '@typescript-eslint/parser';
+
+export default [
+  ...callstackConfig,
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parser: tsEslintParser,
+      parserOptions: { project: './packages/**/tsconfig.json' },
+    },
+  },
+];
 ```
 
 #### VSCode
