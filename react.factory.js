@@ -1,6 +1,5 @@
 const OFF = 0;
 const WARNING = 1;
-const ERROR = 2;
 
 const commonParserOptions = {
     ecmaFeatures: {
@@ -14,8 +13,6 @@ const commonParserOptions = {
       'react/no-unused-prop-types': OFF,
       'react/prop-types': OFF,
       'react/require-default-props': OFF,
-      'react-hooks/rules-of-hooks': ERROR,
-      'react-hooks/exhaustive-deps': WARNING,
     },
     settings: {
       react: {
@@ -29,38 +26,48 @@ function createFlatReactConfig() {
   const reactPlugin = require('eslint-plugin-react');
   const reactHooksPlugin = require('eslint-plugin-react-hooks');
   const globals = require('globals');
-  const { fixupPluginRules } = require('@eslint/compat');
+  const { fixupConfigRules, fixupPluginRules } = require('@eslint/compat');
+  const reactHooksRules = reactHooksPlugin.configs['recommended-latest'].rules;
 
   return [
     ...nodeConfig,
+    ...fixupConfigRules(reactPlugin.configs.flat.recommended),
     {
-      plugins: {
-        'react-hooks': fixupPluginRules(reactHooksPlugin),
-      },
-    },
-    reactPlugin.configs.flat.recommended,
-    {
+      ...commonConfig,
       languageOptions: {
         globals: globals.browser,
         parserOptions: commonParserOptions,
       },
       plugins: {
-        react: reactPlugin,
+        react: fixupPluginRules(reactPlugin),
+        'react-hooks': fixupPluginRules(reactHooksPlugin),
       },
-      ...commonConfig,
+      rules: {
+        ...reactHooksRules,
+        ...commonConfig.rules,
+      },
     },
   ];
 }
 
 function createLegacyReactConfig() {
+  const reactHooksPlugin = require('eslint-plugin-react-hooks');
+
   return {
-    extends: [require.resolve('./node.js'), 'plugin:react/recommended'],
+    ...commonConfig,
+    extends: [
+      require.resolve('./node.js'),
+      'plugin:react/recommended',
+    ],
     env: {
       browser: true,
     },
     plugins: ['react', 'react-hooks'],
     parserOptions: commonParserOptions,
-    ...commonConfig,
+    rules: {
+      ...reactHooksPlugin.configs['recommended-latest'].rules,
+      ...commonConfig.rules,
+    },
   };
 }
 
