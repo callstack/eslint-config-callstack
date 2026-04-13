@@ -75,6 +75,6 @@ function parseForESLint(code, options) {
 }
 
 module.exports = {
-  parse: babelEslintParser.parse,
+  ...babelEslintParser,
   parseForESLint,
 };
