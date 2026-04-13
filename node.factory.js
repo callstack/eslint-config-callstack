@@ -95,9 +95,9 @@ function createFlatNodeConfig() {
   const pluginFlowtype = require('eslint-plugin-flowtype');
   const tsEslintPlugin = require('@typescript-eslint/eslint-plugin');
   const pluginJest = require('eslint-plugin-jest');
-  const babelEslintParser = require('@babel/eslint-parser');
+  const babelEslintParser = require('./babel-eslint-parser.compat');
   const tsEslintParser = require('@typescript-eslint/parser');
-  const { fixupPluginRules } = require('@eslint/compat');
+  const { fixupConfigRules, fixupPluginRules } = require('@eslint/compat');
 
   // move the parserOptions & parser properties to the languageOptions object to support flat config
   // TODO: strip the below as soon as eslint-plugin-flowtype supports eslint@9
@@ -110,11 +110,10 @@ function createFlatNodeConfig() {
 
   pluginFlowtypeRecommendedConfig.languageOptions.parserOptions =
     pluginFlowtypeRecommendedConfig.parserOptions;
-  pluginFlowtypeRecommendedConfig.languageOptions.parser =
-    pluginFlowtypeRecommendedConfig.parser;
-
-  delete pluginFlowtypeRecommendedConfig.parser;
+  // The parser is supplied by the JS override below; keeping Flowtype's legacy
+  // parser reference here breaks flat config on newer ESLint versions.
   delete pluginFlowtypeRecommendedConfig.parserOptions;
+  delete pluginFlowtypeRecommendedConfig.parser;
 
   // since eslint-plugin-flowtype does not support eslint@9 yet, rules do not
   // have the meta.schema property set, which is now required; this results in
@@ -127,7 +126,7 @@ function createFlatNodeConfig() {
 
   return [
     js.configs.recommended,
-    pluginPromise.configs['flat/recommended'],
+    ...fixupConfigRules(pluginPromise.configs['flat/recommended']),
     configPrettier,
     {
       languageOptions: {
@@ -140,8 +139,8 @@ function createFlatNodeConfig() {
         },
       },
       plugins: {
-        import: pluginImport,
-        prettier: pluginPrettier,
+        import: fixupPluginRules(pluginImport),
+        prettier: fixupPluginRules(pluginPrettier),
       },
       ...baseConfigOptions,
     },
@@ -179,7 +178,7 @@ function createFlatNodeConfig() {
     },
     {
       // this is a port of 'extends' for the next object
-      ...pluginJest.configs['flat/recommended'],
+      ...fixupConfigRules(pluginJest.configs['flat/recommended'])[0],
       files: TEST_PATTERNS,
     },
     {
@@ -189,7 +188,7 @@ function createFlatNodeConfig() {
         globals: globals.jest,
       },
       plugins: {
-        jest: pluginJest,
+        jest: fixupPluginRules(pluginJest),
       },
     },
   ];

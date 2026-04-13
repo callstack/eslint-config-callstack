@@ -20,11 +20,13 @@ npm install --save-dev eslint @callstack/eslint-config
 
 You can choose one of the following environments to work with by extending your ESLint config (`eslint.config.mjs` for flat config, or `.eslintrc` / `eslintConfig` field in `package.json` for the eslintrc config style) with `@callstack` config tailored to your project.
 
+If you're using ESLint 10 or newer, use the flat config entrypoints. ESLint 10 no longer loads `eslintrc` files.
+
 ### React Native config
 
 Usage:
 
-#### eslintrc format (ESLint < v9)
+#### eslintrc format (ESLint < v10)
 
 ```json
 {
@@ -64,7 +66,7 @@ Additionally, it sets `"react-native/react-native"` environment and native platf
 
 Usage:
 
-#### eslintrc format (ESLint < v9)
+#### eslintrc format (ESLint < v10)
 
 ```json
 {
@@ -102,7 +104,7 @@ Plugins used:
 
 Usage:
 
-#### eslintrc format (ESLint < v9)
+#### eslintrc format (ESLint < v10)
 
 ```json
 {
@@ -145,7 +147,7 @@ Additionally, it sets `es6` and `node` environments.
 
 ### Example of extending the configuration
 
-##### eslintrc format (ESLint < v9)
+##### eslintrc format (ESLint < v10)
 
 ```json
 {
@@ -187,7 +189,7 @@ yarn eslint --ext '.js,.ts' ./src
 
 To do so, you'll need to override our setup for TS files in your ESLint config:
 
-##### eslintrc format (ESLint < v9)
+##### eslintrc format (ESLint < v10)
 
 ```json
 {

@@ -18,6 +18,7 @@
   },
   "workspaces": [
     "eslint-v8",
-    "eslint-v9"
+    "eslint-v9",
+    "eslint-v10"
   ]
 }

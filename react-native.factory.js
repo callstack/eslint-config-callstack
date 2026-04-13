@@ -56,14 +56,14 @@ function createFlatRNConfig() {
       // eslint-plugin-react-native-a11y does not support eslint@9 yet and: specifies plugins in array form & parserOptions in root, which we patch this here
       // TODO: strip the below as soon as eslint-plugin-react-native-a11y supports eslint@9
       plugins: {
-        'react-native-a11y': pluginA11y,
+        'react-native-a11y': fixupPluginRules(pluginA11y),
       },
       languageOptions: {
         parserOptions: pluginA11y.configs.all.parserOptions,
       },
     },
     {
-      plugins: { '@react-native': rnPluginEslint },
+      plugins: { '@react-native': fixupPluginRules(rnPluginEslint) },
       rules: commonAtReactNativePluginRules,
     },
     {

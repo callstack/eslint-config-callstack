@@ -29,7 +29,7 @@ function createFlatReactConfig() {
   const reactPlugin = require('eslint-plugin-react');
   const reactHooksPlugin = require('eslint-plugin-react-hooks');
   const globals = require('globals');
-  const { fixupPluginRules } = require('@eslint/compat');
+  const { fixupConfigRules, fixupPluginRules } = require('@eslint/compat');
 
   return [
     ...nodeConfig,
@@ -38,14 +38,14 @@ function createFlatReactConfig() {
         'react-hooks': fixupPluginRules(reactHooksPlugin),
       },
     },
-    reactPlugin.configs.flat.recommended,
+    ...fixupConfigRules(reactPlugin.configs.flat.recommended),
     {
       languageOptions: {
         globals: globals.browser,
         parserOptions: commonParserOptions,
       },
       plugins: {
-        react: reactPlugin,
+        react: fixupPluginRules(reactPlugin),
       },
       ...commonConfig,
     },
