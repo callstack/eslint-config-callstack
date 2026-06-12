@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/callstack/eslint-config-callstack.git"
   },
-  "author": "Michał Pierzchała <thymikee@gmail.com>",
+  "author": "Micha\u0142 Pierzcha\u0142a <thymikee@gmail.com>",
   "license": "MIT",
   "keywords": [
     "eslint",
@@ -50,5 +50,8 @@
   },
   "scripts": {
     "test": "yarn --cwd=test && yarn --cwd=test workspaces run test"
+  },
+  "bugs": {
+    "url": "https://github.com/callstack/eslint-config-callstack/issues"
   }
 }
