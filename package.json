@@ -1,6 +1,9 @@
 {
   "name": "@callstack/eslint-config",
   "version": "15.0.0",
+  "bugs": {
+    "url": "https://github.com/callstack/eslint-config-callstack/issues"
+  },
   "description": "ESLint preset extending recommended ESLint config, TypeScript, Prettier and Jest",
   "engines": {
     "node": ">=18.0.0"
