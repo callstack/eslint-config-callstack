@@ -1,6 +1,13 @@
 # @callstack/eslint-config
 
-Callstack ESLint config for React Native, React and Node.js projects, utilizing Flow, TypeScript, Prettier and Jest with sensible defaults. Supports both eslintrc and flat config.
+Callstack ESLint config for React Native, React and Node.js projects, utilizing TypeScript, Flow, Prettier and Jest with sensible defaults.
+
+Starting with v16 this package ships **flat config only** (`eslint.config.*`). The legacy eslintrc format is no longer supported.
+
+## Requirements
+
+- ESLint `^10.0.0`
+- Node.js `^22.18.0` or `>=24.11.0`
 
 ## Installation
 
@@ -12,30 +19,26 @@ yarn add --dev eslint @callstack/eslint-config
 
 Or with npm:
 
-```
+```bash
 npm install --save-dev eslint @callstack/eslint-config
 ```
 
 ## Usage
 
-You can choose one of the following environments to work with by extending your ESLint config (`eslint.config.mjs` for flat config, or `.eslintrc` / `eslintConfig` field in `package.json` for the eslintrc config style) with `@callstack` config tailored to your project.
+Pick the config that matches your project and spread it into your `eslint.config.mjs`:
+
+| Config       | Import path                      |
+| ------------ | -------------------------------- |
+| React Native | `@callstack/eslint-config`       |
+| React        | `@callstack/eslint-config/react` |
+| Node.js      | `@callstack/eslint-config/node`  |
+
+`@callstack/eslint-config/react-native` is an alias for the root import.
 
 ### React Native config
 
-Usage:
-
-#### eslintrc format (ESLint < v9)
-
-```json
-{
-  "extends": "@callstack"
-}
-```
-
-#### flat config format (`eslint.config.mjs`, ESLint 9+)
-
 ```js
-import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
+import callstackConfig from '@callstack/eslint-config';
 
 export default [
   {
@@ -52,122 +55,62 @@ export default [
 ];
 ```
 
-Plugins used:
+Includes everything from the **React config**, plus:
 
-- **React config**
-- [eslint-plugin-react-native](https://yarnpkg.com/en/package/eslint-plugin-react-native)
-- [eslint-plugin-react-native-a11y](https://classic.yarnpkg.com/en/package/eslint-plugin-react-native-a11y)
+- [eslint-plugin-react-native](https://www.npmjs.com/package/eslint-plugin-react-native)
+- [eslint-plugin-react-native-a11y](https://www.npmjs.com/package/eslint-plugin-react-native-a11y)
+- [@react-native/eslint-plugin](https://www.npmjs.com/package/@react-native/eslint-plugin)
 
-Additionally, it sets `"react-native/react-native"` environment and native platform extensions to resolve.
+Additionally, it adds React Native globals and resolves platform-specific extensions (`.ios.*`, `.android.*`, `.native.*`).
 
 ### React config
 
-Usage:
+```js
+import callstackConfig from '@callstack/eslint-config/react';
 
-#### eslintrc format (ESLint < v9)
-
-```json
-{
-  "extends": "@callstack/eslint-config/react"
-}
+export default [...callstackConfig];
 ```
 
-#### flat config format (`eslint.config.mjs`, ESLint 9+)
+Includes everything from the **Node.js config**, plus:
+
+- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+- [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+
+Additionally, it adds browser globals.
+
+### Node.js config
 
 ```js
-import callstackConfigReact from '@callstack/eslint-config/react.flat.js';
+import callstackConfig from '@callstack/eslint-config/node';
 
-export default [
-  {
-    ignores: [
-      // ignored files go here
-    ],
-  },
-  ...callstackConfigReact,
-  {
-    rules: {
-      // your custom rules
-    },
-  },
-];
+export default [...callstackConfig];
 ```
 
-Plugins used:
+Includes:
 
-- **Node config**
-- [eslint-plugin-react](https://yarnpkg.com/en/package/eslint-plugin-react)
-- [eslint-plugin-react-hooks](https://yarnpkg.com/en/package/eslint-plugin-react-hooks)
+- [@eslint/js](https://www.npmjs.com/package/@eslint/js) recommended rules
+- [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) and [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier)
+- [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
+- [eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)
+- [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) (applied for tests only, based on Jest's default `testMatch`)
+- [eslint-plugin-ft-flow](https://www.npmjs.com/package/eslint-plugin-ft-flow) (only for `.js`/`.jsx` files with a `@flow` annotation)
+- [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin) and [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser) (only for `.ts`/`.tsx` files)
 
-### Node config
+Additionally, it adds Node.js globals.
 
-Usage:
+### Extending the configuration
 
-#### eslintrc format (ESLint < v9)
-
-```json
-{
-  "extends": "@callstack/eslint-config/node"
-}
-```
-
-#### flat config format (`eslint.config.mjs`, ESLint 9+)
+Append your own config objects after the Callstack config:
 
 ```js
-import callstackConfigNode from '@callstack/eslint-config/node.flat.js';
-
-export default [
-  {
-    ignores: [
-      // ignored files go here
-    ],
-  },
-  ...callstackConfigNode,
-  {
-    rules: {
-      // your custom rules
-    },
-  },
-];
-```
-
-Plugins used:
-
-- [eslint-config-prettier](https://yarnpkg.com/en/package/eslint-config-prettier)
-- [eslint-plugin-prettier](https://yarnpkg.com/en/package/eslint-plugin-prettier)
-- [eslint-plugin-jest](https://yarnpkg.com/en/package/eslint-plugin-jest) (applied for tests only, based on Jest's `testMatch` config)
-- [eslint-plugin-import](https://yarnpkg.com/en/package/eslint-plugin-import)
-- [eslint-plugin-promise](https://yarnpkg.com/en/package/eslint-plugin-promise)
-- [eslint-plugin-flowtype](https://yarnpkg.com/en/package/eslint-plugin-flowtype)
-- [@typescript-eslint/eslint-plugin](https://yarnpkg.com/en/package/@typescript-eslint/eslint-plugin) (only for `.tsx?` files)
-- [@typescript-eslint/parser](https://yarnpkg.com/en/package/@typescript-eslint/parser) (only for `.tsx?` files)
-
-Additionally, it sets `es6` and `node` environments.
-
-### Example of extending the configuration
-
-##### eslintrc format (ESLint < v9)
-
-```json
-{
-  "extends": "@callstack",
-  "rules": {
-    "global-require": 0,
-    "prefer-destructuring": 0
-  }
-}
-```
-
-##### flat config format (`eslint.config.mjs`, ESLint 9+)
-
-```js
-import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
+import callstackConfig from '@callstack/eslint-config';
 
 export default [
   ...callstackConfig,
   {
     rules: {
-      'global-require': 0,
-      'prefer-destructuring': 0,
+      'global-require': 'off',
+      'prefer-destructuring': 'off',
     },
   },
 ];
@@ -175,56 +118,66 @@ export default [
 
 ### TypeScript
 
-TypeScript is supported out-of-the-box, including importing JS files from TS files and vice-versa. All you need to do is to make sure you have [`typescript`](https://yarnpkg.com/en/package/typescript) module installed.
+TypeScript is supported out of the box, including importing JS files from TS files and vice versa. Make sure you have [`typescript`](https://www.npmjs.com/package/typescript) installed.
 
-Then when running ESLint add `--ext '.js,.ts'` (you might need also `.jsx, .tsx`) option, for example:
-
-```bash
-yarn eslint --ext '.js,.ts' ./src
-```
-
-`parserOptions.project` is set to `./tsconfig.json`. You may need to [adjust that](https://typescript-eslint.io/architecture/parser#project).
-
-To do so, you'll need to override our setup for TS files in your ESLint config:
-
-##### eslintrc format (ESLint < v9)
-
-```json
-{
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "parserOptions": {
-        "project": "./packages/**/tsconfig.json"
-      }
-    }
-  ]
-}
-```
-
-##### flat config format (`eslint.config.mjs`, ESLint 9+)
-
-In the flat config, just append another configuration object to the array and be sure to import the `/react-native.flat` file:
+Type-aware rules use the typescript-eslint [project service](https://typescript-eslint.io/packages/parser#projectservice) (`parserOptions.projectService: true`), which finds the nearest `tsconfig.json` for each linted file. This works in monorepos without extra setup. To customize it, override the parser options for TS files:
 
 ```js
-import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
-import tsEslintParser from '@typescript-eslint/parser';
+import callstackConfig from '@callstack/eslint-config';
 
 export default [
   ...callstackConfig,
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      parser: tsEslintParser,
-      parserOptions: { project: './packages/**/tsconfig.json' },
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
   },
 ];
 ```
 
-#### VSCode
+### JavaScript and Flow
 
-If you're VSCode user, you may find adding this config to your `.vscode/settings.json` helpful:
+`.js` and `.jsx` files are parsed with `@babel/eslint-parser` with JSX and Flow syntax enabled. Your project's Babel config (`babel.config.js`, `.babelrc`) is **not** loaded, so ESLint doesn't depend on your Babel version or presets. If you need extra syntax, pass parser plugins yourself:
+
+```js
+import callstackConfig from '@callstack/eslint-config';
+
+export default [
+  ...callstackConfig,
+  {
+    files: ['**/*.js', '**/*.jsx'],
+    languageOptions: {
+      parserOptions: {
+        babelOptions: {
+          babelrc: false,
+          configFile: false,
+          parserOpts: {
+            plugins: ['jsx', 'flow', 'decorators'],
+          },
+        },
+      },
+    },
+  },
+];
+```
+
+## Migrating from v15
+
+- **eslintrc is no longer supported.** Move your `.eslintrc*` / `eslintConfig` setup to `eslint.config.mjs` (see the [ESLint migration guide](https://eslint.org/docs/latest/use/configure/migration-guide)).
+- **Import paths.** Use `@callstack/eslint-config`, `@callstack/eslint-config/react` and `@callstack/eslint-config/node`. The old `*.flat.js` paths still work as aliases.
+- **`eslint-plugin-import` → `eslint-plugin-import-x`.** Rename `import/*` rules to `import-x/*` in your overrides and `eslint-disable` comments.
+- **`eslint-plugin-flowtype` → `eslint-plugin-ft-flow`.** Rename `flowtype/*` rules to `ft-flow/*`.
+- **TypeScript** now uses `projectService` instead of `project: './tsconfig.json'`.
+- **Babel config is no longer read** when parsing JS files (see [JavaScript and Flow](#javascript-and-flow)).
+- **ESLint 10** is required. Since ESLint 8 and 9 were deprecated.
+- **Node.js 22.18+** is required.
+
+## VSCode
+
+If you're a VSCode user, you may find adding this config to your `.vscode/settings.json` helpful:
 
 ```json
 {
