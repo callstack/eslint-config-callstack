@@ -1,4 +1,4 @@
-import callstackConfig from '@callstack/eslint-config/react-native.flat.js';
+import callstackConfig from '@callstack/eslint-config';
 
 export default [
   {

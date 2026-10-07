@@ -1,11 +1,24 @@
 {
   "name": "@callstack/eslint-config",
-  "version": "15.0.0",
-  "description": "ESLint preset extending recommended ESLint config, TypeScript, Prettier and Jest",
+  "version": "16.0.0",
+  "description": "ESLint flat config for React Native, React and Node.js, with TypeScript, Flow, Prettier and Jest",
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^22.18.0 || >=24.11.0"
   },
   "main": "./react-native.js",
+  "exports": {
+    ".": "./react-native.js",
+    "./react-native": "./react-native.js",
+    "./react-native.js": "./react-native.js",
+    "./react-native.flat.js": "./react-native.js",
+    "./react": "./react.js",
+    "./react.js": "./react.js",
+    "./react.flat.js": "./react.js",
+    "./node": "./node.js",
+    "./node.js": "./node.js",
+    "./node.flat.js": "./node.js",
+    "./package.json": "./package.json"
+  },
   "homepage": "https://github.com/callstack/eslint-config-callstack#readme",
   "repository": {
     "type": "git",
@@ -16,37 +29,37 @@
   "keywords": [
     "eslint",
     "eslint config",
+    "eslint flat config",
     "callstack"
   ],
   "dependencies": {
-    "@babel/core": "^7.22.20",
-    "@babel/eslint-parser": "^7.22.15",
-    "@babel/plugin-syntax-flow": "^7.22.5",
-    "@babel/plugin-transform-react-jsx": "^7.22.15",
-    "@eslint/compat": "^1.1.1",
-    "@react-native/eslint-plugin": "^0.74.0 || ^0.73.0 || ^0.72.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.1",
-    "@typescript-eslint/parser": "^8.0.1",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-flowtype": "^8.0.3",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jest": "^28.7.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-promise": "^7.1.0",
-    "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-native": "^4.1.0",
-    "eslint-plugin-react-native-a11y": "^3.4.1",
+    "@babel/core": "^8.0.6",
+    "@babel/eslint-parser": "^8.0.6",
+    "@eslint/compat": "^2.1.1",
+    "@eslint/js": "^10.0.1",
+    "@react-native/eslint-plugin": "^0.87.1",
+    "@typescript-eslint/eslint-plugin": "^8.71.1",
+    "@typescript-eslint/parser": "^8.71.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-ft-flow": "^3.0.11",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-jest": "^29.16.6",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-promise": "^7.3.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-native": "^5.0.0",
+    "eslint-plugin-react-native-a11y": "^3.5.1",
     "eslint-restricted-globals": "^0.2.0",
-    "globals": "^15.9.0",
-    "prettier": "^3.0.3"
+    "globals": "^17.13.0",
+    "prettier": "^3.9.9"
   },
   "peerDependencies": {
-    "eslint": ">=8.1.0"
+    "eslint": "^10.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.49.0",
-    "typescript": "^5.2.2"
+    "eslint": "^10.12.0",
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "test": "yarn --cwd=test && yarn --cwd=test workspaces run test"
