@@ -173,7 +173,7 @@ export default [
 - **TypeScript** now uses `projectService` instead of `project: './tsconfig.json'`.
 - **Babel config is no longer read** when parsing JS files (see [JavaScript and Flow](#javascript-and-flow)).
 - **ESLint 10** is required. Since ESLint 8 and 9 were deprecated.
-- **Node.js 22.18+** is required.
+- **Node.js `^22.18.0` or `>=24.11.0`** is required.
 
 ## VSCode
 
