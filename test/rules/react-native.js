@@ -23,3 +23,16 @@ export function Screen() {
     </View>
   );
 }
+
+export function Greeting({ name }) {
+  return (
+    <View>
+      {/* eslint-disable-next-line react-native/no-raw-text */}
+      {`hello`}
+      {/* eslint-disable-next-line react-native/no-raw-text */}
+      {`hello ${name}`}
+      <Text>{`hello`}</Text>
+      <Text>{`hello ${name}`}</Text>
+    </View>
+  );
+}
