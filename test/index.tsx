@@ -1,5 +1,5 @@
 import React from 'react';
-import leftPad from 'left-pad'; // eslint-disable-line import/no-extraneous-dependencies, @typescript-eslint/no-unused-vars
+import leftPad from 'left-pad'; // eslint-disable-line import-x/no-extraneous-dependencies, @typescript-eslint/no-unused-vars
 // resolves JS extensions
 import Component from './Component'; // resolves .js
 import ComponentAndroid from './ComponentAndroid'; // resolves .android.js
@@ -10,7 +10,7 @@ import ComponentTS from './ComponentTS'; // resolves .ts
 import ComponentAndroidTSX from './ComponentAndroidTSX'; // resolves .android.tsx
 import ComponentIosTS from './ComponentIosTS'; // resolves .ios.ts
 import ComponentNativeTSX from './ComponentNativeTSX'; // resolves .native.tsx
-import { View } from 'react-native'; // eslint-disable-line import/order
+import { View } from 'react-native'; // eslint-disable-line import-x/order
 
 type Props = {
   isTruthy: string;
