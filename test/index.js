@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import leftPad from 'left-pad'; // eslint-disable-line import-x/no-extraneous-dependencies, no-unused-vars
 // resolves JS extensions
@@ -13,11 +12,7 @@ import ComponentIosTS from './ComponentIosTS'; // resolves .ios.ts
 import ComponentNativeTSX from './ComponentNativeTSX'; // resolves .native.tsx
 import { View } from 'react-native'; // eslint-disable-line import-x/order
 
-type Props = {
-  isTruthy: string,
-};
-
-export default class Bool extends React.Component<Props> {
+export default class Bool extends React.Component {
   Component = Component;
   ComponentAndroid = ComponentAndroid;
   ComponentIos = ComponentIos;
@@ -36,7 +31,7 @@ export default class Bool extends React.Component<Props> {
     return this.props.updateMode(token);
   };
 
-  animate = (_: ?number) => {};
+  animate = (_) => {};
 }
 
 export function Hook() {

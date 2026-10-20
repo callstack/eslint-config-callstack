@@ -1,13 +1,13 @@
 # @callstack/eslint-config
 
-Callstack ESLint config for React Native, React and Node.js projects, utilizing TypeScript, Flow, Prettier and Jest with sensible defaults.
+Callstack ESLint config for React Native, React and Node.js projects, utilizing TypeScript, Prettier and Jest with sensible defaults.
 
 Starting with v16 this package ships **flat config only** (`eslint.config.*`). The legacy eslintrc format is no longer supported.
 
 ## Requirements
 
 - ESLint `^10.0.0`
-- Node.js `^22.18.0` or `>=24.11.0`
+- Node.js `^22.13.0` or `>=24.3.0`
 
 ## Installation
 
@@ -93,7 +93,6 @@ Includes:
 - [eslint-plugin-import-x](https://www.npmjs.com/package/eslint-plugin-import-x)
 - [eslint-plugin-promise](https://www.npmjs.com/package/eslint-plugin-promise)
 - [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) (applied for tests only, based on Jest's default `testMatch`)
-- [eslint-plugin-ft-flow](https://www.npmjs.com/package/eslint-plugin-ft-flow) (only for `.js`/`.jsx` files with a `@flow` annotation)
 - [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin) and [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser) (only for `.ts`/`.tsx` files)
 
 Additionally, it adds Node.js globals.
@@ -138,42 +137,15 @@ export default [
 ];
 ```
 
-### JavaScript and Flow
-
-`.js` and `.jsx` files are parsed with `@babel/eslint-parser` with JSX and Flow syntax enabled. Your project's Babel config (`babel.config.js`, `.babelrc`) is **not** loaded, so ESLint doesn't depend on your Babel version or presets. If you need extra syntax, pass parser plugins yourself:
-
-```js
-import callstackConfig from '@callstack/eslint-config';
-
-export default [
-  ...callstackConfig,
-  {
-    files: ['**/*.js', '**/*.jsx'],
-    languageOptions: {
-      parserOptions: {
-        babelOptions: {
-          babelrc: false,
-          configFile: false,
-          parserOpts: {
-            plugins: ['jsx', 'flow', 'decorators'],
-          },
-        },
-      },
-    },
-  },
-];
-```
-
 ## Migrating from v15
 
 - **eslintrc is no longer supported.** Move your `.eslintrc*` / `eslintConfig` setup to `eslint.config.mjs` (see the [ESLint migration guide](https://eslint.org/docs/latest/use/configure/migration-guide)).
 - **Import paths.** Use `@callstack/eslint-config`, `@callstack/eslint-config/react` and `@callstack/eslint-config/node`. The old `*.flat.js` paths still work as aliases.
 - **`eslint-plugin-import` → `eslint-plugin-import-x`.** Rename `import/*` rules to `import-x/*` in your overrides and `eslint-disable` comments.
-- **`eslint-plugin-flowtype` → `eslint-plugin-ft-flow`.** Rename `flowtype/*` rules to `ft-flow/*`.
+- **Flow is no longer supported.** `eslint-plugin-flowtype` and `@babel/eslint-parser` were removed; `.js`/`.jsx` files are now parsed by ESLint's default parser (espree). Remove `flowtype/*` rules from your config. If you still need Flow, add [`hermes-eslint`](https://www.npmjs.com/package/hermes-eslint) and [`eslint-plugin-ft-flow`](https://www.npmjs.com/package/eslint-plugin-ft-flow) yourself.
 - **TypeScript** now uses `projectService` instead of `project: './tsconfig.json'`.
-- **Babel config is no longer read** when parsing JS files (see [JavaScript and Flow](#javascript-and-flow)).
 - **ESLint 10** is required. Since ESLint 8 and 9 were deprecated.
-- **Node.js `^22.18.0` or `>=24.11.0`** is required.
+- **Node.js `^22.13.0` or `>=24.3.0`** is required.
 
 ## VSCode
 

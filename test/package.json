@@ -13,7 +13,7 @@
     "@callstack/eslint-config": "link:..",
     "jest": "*",
     "left-pad": "*",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "workspaces": [
     "eslint-v10"

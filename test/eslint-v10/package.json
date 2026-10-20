@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "eslint10": "npm:eslint@^10.12.0"
+    "eslint10": "npm:eslint@^10.13.0"
   },
   "scripts": {
     "test": "cd .. && node ./node_modules/eslint10/bin/eslint.js --max-warnings=0 --report-unused-disable-directives --config=./eslint-v10/eslint.config.mjs ."
