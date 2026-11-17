@@ -23,6 +23,28 @@ Or with npm:
 npm install --save-dev eslint @callstack/eslint-config
 ```
 
+### Peer dependency warnings
+
+A few bundled plugins haven't published a release that lists ESLint 10 in their `peerDependencies` yet:
+
+- `eslint-plugin-react`
+- `eslint-plugin-react-native`
+- `eslint-plugin-react-native-a11y`
+
+Your package manager may print peer dependency warnings for them during install. They are safe to ignore: this config wraps the plugins with [`@eslint/compat`](https://www.npmjs.com/package/@eslint/compat) where needed, and every rule is tested against ESLint 10.
+
+With npm, you can silence the warnings with `overrides` in your `package.json`:
+
+```json
+{
+  "overrides": {
+    "eslint-plugin-react": { "eslint": "$eslint" },
+    "eslint-plugin-react-native": { "eslint": "$eslint" },
+    "eslint-plugin-react-native-a11y": { "eslint": "$eslint" }
+  }
+}
+```
+
 ## Usage
 
 Pick the config that matches your project and spread it into your `eslint.config.mjs`:
