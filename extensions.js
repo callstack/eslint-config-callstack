@@ -2,7 +2,7 @@ const JS = ['.js', '.jsx'];
 const TS = ['.ts', '.tsx', '.d.ts'];
 
 function generateExtensionsForPlatform(baseExts, platform) {
-  return baseExts.map(ext => `.${platform}${ext}`);
+  return baseExts.map((ext) => `.${platform}${ext}`);
 }
 
 const JS_REACT_NATIVE = [
